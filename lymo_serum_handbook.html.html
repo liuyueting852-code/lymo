@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0f0f0e">
+<title>黎沫三抗精华 · 主播手册</title>
+<style>
+  html, body { background-color: #0f0f0e !important; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  :root {
+    --bg:  #0f0f0e;
+    --bg2: #1a1917;
+    --bg3: #242220;
+    --gold: #c9a84c;
+    --gold-l: #e8c96a;
+    --text: #e8e4dc;
+    --mid:  #aeaaa2;
+    --dim:  #72706c;
+    --white: #f5f2ec;
+    --green: #4a8c5c;
+    --div: rgba(201,168,76,0.16);
+    --pad: 22px;
+  }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", sans-serif;
+    background-color: #0f0f0e;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.75;
+    padding-bottom: 60px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 99;
+    background: #0f0f0e;
+    border-bottom: 1px solid var(--div);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 var(--pad); height: 48px;
+  }
+  .nav-brand { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; }
+  .nav-links { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { font-size: 12px; color: var(--dim); text-decoration: none; }
+  .nav-links a:hover { color: var(--gold); }
+  #prog { position: fixed; top: 48px; left: 0; height: 2px; background: var(--gold); width: 0; z-index: 98; }
+
+  /* HERO */
+  .hero { background: #0f0f0e; padding: 52px var(--pad) 40px; border-bottom: 1px solid var(--div); }
+  .eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-size: 26px; font-weight: 700; color: var(--white); line-height: 1.25; margin: 0 0 6px; }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub { font-size: 13px; color: var(--dim); margin-bottom: 28px; }
+  .gold-rule { width: 32px; height: 2px; background: var(--gold); margin-bottom: 22px; }
+  .hero-intro { font-size: 15px; color: var(--mid); line-height: 1.9; margin-bottom: 24px; }
+  .hero-intro strong { color: var(--white); }
+
+  /* 四个结果卡 */
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+  .result-card {
+    background: var(--bg2); border: 1px solid var(--div);
+    border-radius: 10px; padding: 13px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .result-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+  .result-text { font-size: 13px; color: var(--white); font-weight: 500; }
+  .result-sub { font-size: 11px; color: var(--dim); }
+
+  /* SECTION */
+  section { background: #0f0f0e; padding: 40px var(--pad) 0; border-top: 1px solid var(--div); }
+  .sec-eye { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+  .sec-title { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.3; margin: 0 0 20px; }
+  .sec-desc { font-size: 14px; color: var(--mid); line-height: 1.85; margin-bottom: 28px; }
+  .section-end { height: 40px; }
+
+  /* ── 配方三步 ── */
+  .step-wrap { display: flex; flex-direction: column; }
+  .step { display: flex; gap: 16px; position: relative; padding-bottom: 32px; }
+  .step:not(:last-child)::after {
+    content: ''; position: absolute;
+    left: 16px; top: 38px; bottom: 0;
+    width: 1px; background: var(--div);
+  }
+  .step-num {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--gold); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--gold);
+  }
+  .step-right { flex: 1; padding-top: 4px; }
+  .step-title { font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+
+  /* 理解框 */
+  .grasp {
+    background: var(--bg2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px; margin-bottom: 14px;
+  }
+  .grasp-label { font-size: 10px; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+  .grasp p { font-size: 13px; color: var(--mid); line-height: 1.8; margin: 0; }
+
+  /* 成分条 */
+  .ing-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+  .ing-item { background: var(--bg3); border-radius: 7px; padding: 11px 13px; }
+  .ing-name { font-size: 13px; color: var(--gold-l); font-weight: 500; margin-bottom: 3px; }
+  .ing-desc { font-size: 12px; color: var(--dim); line-height: 1.6; }
+
+  /* 专利徽章（小，内联） */
+  .patent-row { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; margin-bottom: 4px; }
+  .patent-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.22);
+    border-radius: 5px; padding: 5px 9px;
+  }
+  .patent-tag .pt-label { font-size: 11px; color: var(--gold); }
+  .patent-tag .pt-num { font-size: 10px; color: var(--dim); }
+
+  /* 解决 badge */
+  .solves { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+  .solve-tag {
+    font-size: 11px;
+    background: rgba(74,140,92,0.1);
+    border: 1px solid rgba(74,140,92,0.3);
+    color: #7ec99a; padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* 总结卡 */
+  .summary-card {
+    background: rgba(201,168,76,0.07);
+    border: 1px solid rgba(201,168,76,0.22);
+    border-radius: 10px; padding: 18px 16px;
+    margin: 8px 0 40px;
+  }
+  .summary-card .label { font-size: 10px; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+  .summary-card .main { font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .summary-card .sub { font-size: 12px; color: var(--dim); }
+
+  /* ── 数据+场景 ── */
+  .scene-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+  .scene-card {
+    background: var(--bg2);
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--bg3);
+  }
+  .scene-card-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px; cursor: pointer; user-select: none;
+  }
+  .scene-card-head:hover { background: var(--bg3); }
+  .scene-emoji { font-size: 22px; flex-shrink: 0; }
+  .scene-card-title { font-size: 14px; color: var(--white); font-weight: 500; }
+  .scene-card-sub { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  .scene-toggle { margin-left: auto; color: var(--gold); font-size: 16px; flex-shrink: 0; transition: transform 0.3s; }
+  .scene-toggle.open { transform: rotate(45deg); }
+
+  .scene-card-body { display: none; padding: 0 16px 18px; }
+  .scene-card-body.open { display: block; }
+
+  /* 数据行（在场景卡内） */
+  .data-rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .data-row {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg3); border-radius: 7px; padding: 10px 13px;
+  }
+  .data-label { font-size: 13px; color: var(--mid); }
+  .data-num { font-size: 18px; font-weight: 700; color: var(--gold); }
+  .data-src { font-size: 10px; color: var(--dim); margin-bottom: 12px; padding-left: 2px; }
+
+  /* 场景话术框 */
+  .scene-script {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px; padding: 13px 14px;
+  }
+  .scene-script-desc { font-size: 13px; color: var(--text); line-height: 1.8; margin-bottom: 10px; }
+  .scene-script-tip {
+    font-size: 12px; color: var(--dim);
+    border-left: 2px solid var(--gold);
+    padding-left: 9px; line-height: 1.6;
+  }
+
+  /* ── 话术卡 ── */
+  .script-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+  .script-card { background: var(--bg2); border-radius: 12px; overflow: hidden; border: 1px solid var(--bg3); }
+  .script-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 16px; cursor: pointer; user-select: none;
+  }
+  .script-head:hover { background: var(--bg3); }
+  .script-head-left { display: flex; align-items: center; gap: 11px; }
+  .script-num { font-size: 22px; color: var(--gold); opacity: 0.3; font-weight: 700; min-width: 28px; line-height: 1; }
+  .script-head-title { font-size: 14px; color: var(--white); font-weight: 500; }
+  .script-head-tag { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  .toggle { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--div); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 13px; transition: transform 0.3s; flex-shrink: 0; }
+  .toggle.open { transform: rotate(45deg); }
+  .script-body { display: none; padding: 0 16px 16px; }
+  .script-body.open { display: block; }
+  .script-box {
+    background: var(--bg3); border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0; padding: 14px;
+    font-size: 14px; color: var(--mid); line-height: 2;
+  }
+  .script-box strong { color: var(--white); }
+
+  /* 通用卡 */
+  .card { background: var(--bg2); border-radius: 10px; padding: 18px; margin-bottom: 12px; }
+  .card-label { font-size: 10px; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+  .card p { font-size: 14px; color: var(--mid); line-height: 1.9; margin: 0; }
+  .card strong { color: var(--white); }
+
+  /* 逼单场景块 */
+  .push-scene {
+    background: var(--bg2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 16px; margin-bottom: 10px;
+  }
+  .push-scene-label { font-size: 13px; color: var(--white); font-weight: 500; margin-bottom: 6px; }
+  .push-scene p { font-size: 13px; color: var(--mid); line-height: 1.8; margin: 0; }
+  .push-scene strong { color: var(--white); }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 40px; }
+  .faq-item { background: var(--bg2); border-radius: 10px; overflow: hidden; }
+  .faq-q { padding: 14px 15px; font-size: 14px; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .faq-q:hover { background: var(--bg3); }
+  .faq-icon { color: var(--gold); font-size: 16px; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-icon.open { transform: rotate(45deg); }
+  .faq-a { display: none; padding: 0 15px 13px; font-size: 13px; color: var(--mid); line-height: 1.8; border-top: 1px solid var(--bg3); }
+  .faq-a.open { display: block; padding-top: 11px; }
+
+  /* 记忆卡 */
+  .memory-card {
+    background: rgba(201,168,76,0.07);
+    border: 1px solid rgba(201,168,76,0.22);
+    border-radius: 14px; padding: 24px 18px; margin-bottom: 40px;
+  }
+  .memory-head { font-size: 12px; letter-spacing: 0.1em; color: var(--gold); text-align: center; margin-bottom: 20px; }
+  .memory-item { display: flex; gap: 13px; margin-bottom: 16px; }
+  .memory-item:last-child { margin-bottom: 0; }
+  .mem-num { font-size: 20px; font-weight: 700; color: var(--gold); line-height: 1; min-width: 24px; }
+  .mem-title { font-size: 13px; color: var(--white); font-weight: 500; margin-bottom: 3px; }
+  .mem-desc { font-size: 12px; color: var(--dim); line-height: 1.6; }
+
+  /* story */
+  .story {
+    background: var(--bg2); border: 1px solid var(--div);
+    border-radius: 12px; padding: 22px 18px; margin-bottom: 40px;
+    position: relative; overflow: hidden;
+  }
+  .story::before {
+    content: '"'; position: absolute; top: -14px; left: 12px;
+    font-size: 90px; color: var(--gold); opacity: 0.05; line-height: 1; pointer-events: none;
+  }
+  .story p { font-size: 14px; color: var(--mid); line-height: 2; margin: 0 0 10px; position: relative; }
+  .story p:last-child { margin: 0; }
+  .story strong { color: var(--white); }
+  .story .gold { color: var(--gold); font-weight: 500; }
+
+  footer { padding: 28px var(--pad); text-align: center; border-top: 1px solid var(--div); background: #0f0f0e; }
+  .footer-brand { font-size: 14px; color: var(--gold); letter-spacing: 0.18em; margin-bottom: 5px; }
+  .footer-note { font-size: 11px; color: var(--dim); }
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#scenes">数据+场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&A</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>三抗</em>焕颜精华液</h1>
+  <div class="hero-sub">先读懂产品，再开口讲产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    三抗是概念，不用反复强调。<br>
+    你只需要记住一件事：<br>
+    <strong>真实用户告诉我们，这瓶解决了她们四个问题。</strong>
+  </p>
+  <div class="result-grid">
+    <div class="result-card">
+      <div class="result-icon">☀</div>
+      <div><div class="result-text">晒后修复</div><div class="result-sub">用户自发反馈</div></div>
+    </div>
+    <div class="result-card">
+      <div class="result-icon">◎</div>
+      <div><div class="result-text">毛孔变小</div><div class="result-sub">用户自发反馈</div></div>
+    </div>
+    <div class="result-card">
+      <div class="result-icon">✦</div>
+      <div><div class="result-text">脸变亮了</div><div class="result-sub">用户自发反馈</div></div>
+    </div>
+    <div class="result-card">
+      <div class="result-icon">◈</div>
+      <div><div class="result-text">吸收很快</div><div class="result-sub">用户自发反馈</div></div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--dim);">↓ 向下读，搞懂为什么能做到这四件事</p>
+</div>
+
+<!-- ══ 配方逻辑 ══ -->
+<section id="logic">
+  <div class="sec-eye">Part 01 · 配方逻辑</div>
+  <p class="sec-title">先搞懂<br>这瓶产品</p>
+  <p class="sec-desc">大多数精华的逻辑是堆成分。这瓶不一样——<br>它按照皮肤真正的接收顺序来设计：</p>
+
+  <div class="step-wrap">
+
+    <!-- 第一步 -->
+    <div class="step">
+      <div class="step-num">一</div>
+      <div class="step-right">
+        <div class="step-title">先让皮肤平静</div>
+        <div class="grasp">
+          <div class="grasp-label">主播这样理解</div>
+          <p>皮肤就像一道门。屏障受损时门是破的——外面刺激进来，里面水分流失，涂再贵的成分也留不住。<br>第一件事：先把破损的门修好。</p>
+        </div>
+        <div class="ing-list">
+          <div class="ing-item">
+            <div class="ing-name">乳酸杆菌发酵产物 ← 成分表第一位，不是水</div>
+            <div class="ing-desc">发酵小分子从底层修护皮肤微生态，让皮肤恢复健康接收状态</div>
+          </div>
+          <div class="ing-item">
+            <div class="ing-name">积雪草 + 黄花蒿 + 甘草</div>
+            <div class="ing-desc">三个植物提取物专门处理炎症反应。晒后红热刺痛，先把火扑灭</div>
+          </div>
+          <div class="ing-item">
+            <div class="ing-name">丁二醇 + 戊二醇</div>
+            <div class="ing-desc">溶剂体系，配合发酵小分子提升渗透效率——这就是为什么用完吸收快</div>
+          </div>
+        </div>
+        <div class="solves">
+          <span class="solve-tag">✓ 晒后修复</span>
+          <span class="solve-tag">✓ 好吸收</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二步 -->
+    <div class="step">
+      <div class="step-num">二</div>
+      <div class="step-right">
+        <div class="step-title">让皮肤干净</div>
+        <div class="grasp">
+          <div class="grasp-label">主播这样理解</div>
+          <p>屏障修好之后，清理垃圾。<br>
+          自由基让皮肤氧化变暗 → 这是提亮的根本<br>
+          堆积皮脂和角质堵毛孔 → 这是缩毛孔的根本</p>
+        </div>
+        <div class="ing-list">
+          <div class="ing-item">
+            <div class="ing-name">五重抗氧化：烟酰胺 · 松口蘑 · 倒捻子 · 迷迭香 · 黄花蒿</div>
+            <div class="ing-desc">五个成分从不同路径清除自由基。单一成分只能堵一条路，多通道同时堵，氧化才真的被拦住</div>
+            <div class="patent-row">
+              <div class="patent-tag">
+                <span style="font-size:12px;">🏅</span>
+                <div>
+                  <div class="pt-label">发明专利 · 松口蘑发酵技术 · ZL 2022 1 0378723.X</div>
+                </div>
+              </div>
+              <div class="patent-tag">
+                <span style="font-size:12px;">🏅</span>
+                <div>
+                  <div class="pt-label">发明专利 · 倒捻子素纳米胶束 · ZL 2023 1 0727536.2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ing-item">
+            <div class="ing-name">烟酰胺 + 人参皂苷</div>
+            <div class="ing-desc">烟酰胺调节皮脂，毛孔不被油撑；人参皂苷促进角质代谢，毛孔口不堵</div>
+          </div>
+        </div>
+        <div class="solves">
+          <span class="solve-tag">✓ 提亮肤色</span>
+          <span class="solve-tag">✓ 缩小毛孔</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第三步 -->
+    <div class="step">
+      <div class="step-num">三</div>
+      <div class="step-right">
+        <div class="step-title">让皮肤发光</div>
+        <div class="grasp">
+          <div class="grasp-label">主播这样理解</div>
+          <p>前两步解决今天的问题。<br>这一步解决时间的问题——让皮肤结构越来越好，效果持续往好的方向走。</p>
+        </div>
+        <div class="ing-list">
+          <div class="ing-item">
+            <div class="ing-name">棕榈酰三肽-1 + 棕榈酰四肽-7（Matrixyl 3000）</div>
+            <div class="ing-desc">三肽促进胶原蛋白合成，四肽抑制炎症因子，两个肽协同让皮肤结构越来越好</div>
+          </div>
+          <div class="ing-item">
+            <div class="ing-name">银耳 + 松口蘑 + 药用层孔菌</div>
+            <div class="ing-desc">东方来源真菌发酵提取物，保湿、修护、细胞更新，长效发挥</div>
+          </div>
+        </div>
+        <div class="solves">
+          <span class="solve-tag">✓ 长效改善</span>
+          <span class="solve-tag">✓ 持续变好</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="summary-card">
+    <div class="label">一句话记住</div>
+    <div class="main">平静 → 干净 → 发光</div>
+    <div class="sub">有顺序，不是堆成分——皮肤稳定了，成分才真的有用</div>
+  </div>
+
+</section>
+
+<!-- ══ 数据 + 场景 ══ -->
+<section id="scenes">
+  <div class="sec-eye">Part 02 · 检测数据 + 销售场景</div>
+  <p class="sec-title">数据怎么<br>变成销售</p>
+  <p class="sec-desc">数据是冷的，场景才让用户觉得「这说的就是我」。<br>根据直播间弹幕，找到对应场景直接用。</p>
+
+  <div class="scene-cards">
+
+    <!-- 场景1：晒后/换季 -->
+    <div class="scene-card">
+      <div class="scene-card-head" onclick="toggleScene(this)">
+        <div class="scene-emoji">🌞</div>
+        <div>
+          <div class="scene-card-title">换季 · 晒后 · 皮肤在报警</div>
+          <div class="scene-card-sub">弹幕出现「换季过敏」「晒红了」「皮肤好干」时用</div>
+        </div>
+        <div class="scene-toggle">+</div>
+      </div>
+      <div class="scene-card-body">
+        <div class="data-src">第三方检测数据 · 广东立创检测技术服务有限公司 · 30名敏感肌受试者</div>
+        <div class="data-rows">
+          <div class="data-row">
+            <div class="data-label">皮肤泛红改善 · 7天</div>
+            <div class="data-num">-20.1%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">皮肤水分流失减少 · 7天</div>
+            <div class="data-num">-25.2%</div>
+          </div>
+        </div>
+        <div class="scene-script">
+          <div class="scene-script-desc">「脸被晒红了，或者换季皮肤开始报警——现在开始用，7天皮肤泛红改善超20%，水分流失减少25%。不用等一个月，7天就有明显变化。」</div>
+          <div class="scene-script-tip">话术：「晒完不用慌，7天窗口期，现在开始刚好来得及」</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景2：拍照/出游 -->
+    <div class="scene-card">
+      <div class="scene-card-head" onclick="toggleScene(this)">
+        <div class="scene-emoji">📸</div>
+        <div>
+          <div class="scene-card-title">出游 · 拍照 · 想上镜好看</div>
+          <div class="scene-card-sub">弹幕出现「要去旅游」「明天拍照」「想皮肤好看」时用</div>
+        </div>
+        <div class="scene-toggle">+</div>
+      </div>
+      <div class="scene-card-body">
+        <div class="data-src">第三方检测数据 · 广东立创检测技术服务有限公司 · 30名敏感肌受试者</div>
+        <div class="data-rows">
+          <div class="data-row">
+            <div class="data-label">皮肤保湿力提升 · 4小时后</div>
+            <div class="data-num">+74.4%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">皮肤弹性改善 · 4小时后</div>
+            <div class="data-num">+33.4%</div>
+          </div>
+        </div>
+        <div class="scene-script">
+          <div class="scene-script-desc">「明天要出去拍照——今晚用上，明天早上皮肤保湿力最高提升74%，弹性提升33%，上镜显得饱满透亮，照片不需要过度修图。」</div>
+          <div class="scene-script-tip">话术：「出发前一晚的护肤，决定第二天照片里的你是什么状态」</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景3：婚礼/重要典礼 -->
+    <div class="scene-card">
+      <div class="scene-card-head" onclick="toggleScene(this)">
+        <div class="scene-emoji">💍</div>
+        <div>
+          <div class="scene-card-title">备婚 · 重要典礼 · 提前规划</div>
+          <div class="scene-card-sub">弹幕出现「快结婚了」「有重要活动」「想提前备好皮肤」时用</div>
+        </div>
+        <div class="scene-toggle">+</div>
+      </div>
+      <div class="scene-card-body">
+        <div class="data-src">第三方检测数据 · 广东立创检测技术服务有限公司 · 30名敏感肌受试者</div>
+        <div class="data-rows">
+          <div class="data-row">
+            <div class="data-label">皮肤泛红改善 · 28天</div>
+            <div class="data-num">-31.3%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">皮肤水分流失减少 · 28天</div>
+            <div class="data-num">-35.6%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">皮肤弹性改善 · 28天</div>
+            <div class="data-num">+26.0%</div>
+          </div>
+        </div>
+        <div class="scene-script">
+          <div class="scene-script-desc">「婚礼前28天开始用——泛红改善31%，弹性提升26%，水分流失减少35%。拍婚纱照不需要靠修图，是皮肤真的变好了。」</div>
+          <div class="scene-script-tip">话术：「备婚护肤提前一个月开始，拍出来的才是真实的好皮肤」</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景4：职场/见重要的人 -->
+    <div class="scene-card">
+      <div class="scene-card-head" onclick="toggleScene(this)">
+        <div class="scene-emoji">👔</div>
+        <div>
+          <div class="scene-card-title">职场 · 见重要的人 · 状态管理</div>
+          <div class="scene-card-sub">弹幕出现「要见客户」「有面试」「想保持状态」时用</div>
+        </div>
+        <div class="scene-toggle">+</div>
+      </div>
+      <div class="scene-card-body">
+        <div class="data-src">第三方检测数据 · 广东立创检测技术服务有限公司 · 30名敏感肌受试者</div>
+        <div class="data-rows">
+          <div class="data-row">
+            <div class="data-label">皱纹改善 · 28天</div>
+            <div class="data-num">-27.4%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">整体满意 · 想继续使用</div>
+            <div class="data-num">100%</div>
+          </div>
+        </div>
+        <div class="scene-script">
+          <div class="scene-script-desc">「皮肤状态也是职场竞争力。不是临时救急，是提前28天养成好底子——见人的时候状态稳定，不靠运气靠皮肤。」</div>
+          <div class="scene-script-tip">话术：「不是偶尔发光，是持续在线」</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ 话术 ══ -->
+<section id="scripts">
+  <div class="sec-eye">Part 03 · 直播话术</div>
+  <p class="sec-title">四个痛点<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px;">说问题 → 说原因 → 说这瓶怎么解决</p>
+
+  <div class="script-cards">
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript(this)">
+        <div class="script-head-left">
+          <div class="script-num">01</div>
+          <div>
+            <div class="script-head-title">晒后修复</div>
+            <div class="script-head-tag">夏季主推 · 场景感强</div>
+          </div>
+        </div>
+        <div class="toggle">+</div>
+      </div>
+      <div class="script-body">
+        <div class="script-box">
+          夏天最崩溃的事是什么？出门半小时回来，脸又红又热又刺，敷面膜也只是表面凉快，第二天还是暗。<br><br>
+          为什么？因为晒后的皮肤是轻度炎症状态，紫外线破坏了皮肤细胞，面膜只能补水，处理不了炎症。<br><br>
+          这瓶精华里的积雪草、黄花蒿、甘草，三个成分专门处理炎症反应，不只是让皮肤凉下来，是从细胞层面开始修复。<br><br>
+          <strong>第三方检测：30名敏感肌受试者使用7天，皮肤泛红改善超过20%——仪器测出来的，不是主观感受。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript(this)">
+        <div class="script-head-left">
+          <div class="script-num">02</div>
+          <div>
+            <div class="script-head-title">缩小毛孔</div>
+            <div class="script-head-tag">搜索量大 · 共鸣度高</div>
+          </div>
+        </div>
+        <div class="toggle">+</div>
+      </div>
+      <div class="script-body">
+        <div class="script-box">
+          毛孔粗大是天生的吗？不完全是。毛孔看起来大，90%是两个原因：油脂太多把毛孔撑大了，或者角质堆积堵在毛孔口。<br><br>
+          水杨酸能清除堆积，短期有效，但没有从源头调节皮脂分泌和代谢节奏，需要持续使用才能维持。<br><br>
+          这瓶用的是烟酰胺加人参皂苷：烟酰胺从源头调节皮脂，油少了毛孔不被撑；人参皂苷促进角质代谢，毛孔口不堵了自然就小了。<br><br>
+          <strong>改变的是皮肤的代谢状态，效果更稳定。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript(this)">
+        <div class="script-head-left">
+          <div class="script-num">03</div>
+          <div>
+            <div class="script-head-title">提亮肤色</div>
+            <div class="script-head-tag">反常识切入 · 记忆点强</div>
+          </div>
+        </div>
+        <div class="toggle">+</div>
+      </div>
+      <div class="script-body">
+        <div class="script-box">
+          用了很久美白产品，脸还是暗？不一定是产品骗人，可能是搞错了问题。<br><br>
+          脸黑和脸暗是两件事：脸黑是色素问题，美白产品有用；脸暗是氧化问题，美白产品没用。整张脸均匀发灰发黄、没有透亮感，基本上就是氧化了。<br><br>
+          这瓶用了五个成分多通道抗氧化。其中松口蘑和倒捻子，生产企业有国家授权的发明专利——不是买来的通用原料，是自主研发的技术。<br><br>
+          <strong>皮肤干净了，光自然透出来——这种亮不是反光，是真的透亮。</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="script-card">
+      <div class="script-head" onclick="toggleScript(this)">
+        <div class="script-head-left">
+          <div class="script-num">04</div>
+          <div>
+            <div class="script-head-title">好吸收</div>
+            <div class="script-head-tag">使用体验 · 建立信任</div>
+          </div>
+        </div>
+        <div class="toggle">+</div>
+      </div>
+      <div class="script-body">
+        <div class="script-box">
+          很多精华涂上去黏黏的，半天吸收不了——不是你皮肤的问题，是配方的问题。<br><br>
+          很多品牌加很多增稠剂让质地看起来饱满，结果成分堆在皮肤表面进不去。<br><br>
+          这瓶成分表第一位不是水，是乳酸杆菌发酵产物。发酵小分子渗透性天然强，配合溶剂体系让整瓶精华吸收效率都提高了。<br><br>
+          <strong>检测数据：用完4小时皮肤保湿力提升74%——涂上去快不是因为没营养，是因为东西真的进去了。</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ 品牌故事 ══ -->
+<section id="story">
+  <div class="sec-eye">Part 04 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>这个品牌的创始人在化妆品行业做了二十年。</p>
+    <p>从小在化妆品生产的环境里长大，家里饭桌上聊的都是<strong>哪批原料好、哪个配方要改、哪批货卖得好</strong>。</p>
+    <p>后来进了自己家的工厂，财务、企划、品牌、销售，每个环节都待过。</p>
+    <p>他做这个品牌只有一个标准：<strong>不想赚最多的钱，只想做一瓶自己敢用、消费者买得起的产品。</strong></p>
+    <p class="gold">不过度承诺，是因为产品本身会说话。</p>
+  </div>
+  <div class="section-end"></div>
+</section>
+
+<!-- ══ 逼单 ══ -->
+<section id="push">
+  <div class="sec-eye">Part 05 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px;">根据弹幕情况选场景，再接通用话术收单。</p>
+
+  <!-- 场景逼单 -->
+  <div class="push-scene">
+    <div class="push-scene-label">📸 明天要拍照/出游的姐妹</div>
+    <p>今晚用上，明天早上皮肤保湿力最高提升74%，上镜饱满透亮。<strong>出发前一晚的护肤，决定照片里你是什么状态。</strong></p>
+  </div>
+
+  <div class="push-scene">
+    <div class="push-scene-label">🌞 刚晒完/换季皮肤在报警的姐妹</div>
+    <p>7天皮肤泛红改善超20%。<strong>晒完不用慌，7天窗口期，现在开始刚好来得及。</strong></p>
+  </div>
+
+  <div class="push-scene">
+    <div class="push-scene-label">💍 有婚礼/重要活动在计划的姐妹</div>
+    <p>提前28天开始——泛红改善31%，弹性提升26%，皱纹改善27%。<strong>婚纱照里的好皮肤，是提前一个月养出来的。</strong></p>
+  </div>
+
+  <div class="push-scene">
+    <div class="push-scene-label">👔 近期有重要场合/见重要的人的姐妹</div>
+    <p>皮肤状态也是竞争力。28天系统改善，100%受试者满意、100%想继续用。<strong>不是偶尔发光，是持续在线。</strong></p>
+  </div>
+
+  <!-- 通用话术 -->
+  <div class="card" style="margin-top:20px;">
+    <div class="card-label">价值锚定</div>
+    <p>发酵基底、五重抗氧化（两个发明专利成分）、双肽组合，任何一个单独做一瓶精华都不便宜。这瓶把它们放在一起，还按照皮肤的接收顺序设计好了。<strong>今天直播间是最低价。</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="card-label">数据背书</div>
+    <p>第三方机构检测，30名敏感肌受试者：7天皮肤泛红改善20%，28天改善31%，4小时保湿力提升74%，100%整体满意、100%想继续用。<strong>这不是我们说的，是数据说的。</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="card-label">临门收单</div>
+    <p>暗沉困扰的、毛孔粗大的、晒后不知道怎么修复的——这瓶可以试试。两个发明专利成分，第三方检测数据背书。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+
+  <div class="section-end"></div>
+</section>
+
+<!-- ══ Q&A ══ -->
+<section id="faq">
+  <div class="sec-eye">Part 06 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>和其他精华有什么不一样？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">别人堆成分，我们想的是顺序。先修屏障，再清理，再修护。皮肤稳定了，成分才真的有用。而且核心成分有两项国家发明专利，不是行业通用原料。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>敏感肌可以用吗？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">可以。第三方检测的30名受试者本身就是敏感肌人群（乳酸刺痛阳性），全程无不良事件。但急性过敏期——红肿脱皮大面积刺痛——先就医，稳定后再用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>多久能见效？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">吸收好、晒后舒缓，当天有感觉。提亮和毛孔，两到四周开始有变化。检测数据显示，连续28天各项指标持续改善，100%受试者想继续使用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>有没有检测报告？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">有。广东立创检测技术服务有限公司出具的第三方人体功效测试报告，30名敏感肌受试者，7天和28天双维度检测，结果均有统计显著性（P＜0.05）。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>男生可以用吗？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">可以。抗氧化、修护、缩毛孔，男生也有这些需求，成分没有性别限制。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 记忆卡 ══ -->
+<section style="border-top:1px solid var(--div);padding:40px var(--pad) 0;">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="memory-card">
+    <div class="memory-head">进直播间前最后看一遍</div>
+    <div class="memory-item">
+      <div class="mem-num">1</div>
+      <div>
+        <div class="mem-title">四个用户验证的效果</div>
+        <div class="mem-desc">晒后修复、毛孔、提亮、好吸收——用户说的，不是我们承诺的</div>
+      </div>
+    </div>
+    <div class="memory-item">
+      <div class="mem-num">2</div>
+      <div>
+        <div class="mem-title">一个配方逻辑</div>
+        <div class="mem-desc">平静 → 干净 → 发光，有顺序，不是堆成分</div>
+      </div>
+    </div>
+    <div class="memory-item">
+      <div class="mem-num">3</div>
+      <div>
+        <div class="mem-title">两个底气</div>
+        <div class="mem-desc">第三方检测报告 + 两项国家发明专利——数据和专利说话，不需要过度承诺</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">LYMO 黎沫</div>
+  <div class="footer-note">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+    document.getElementById('prog').style.width = p + '%';
+  });
+  function toggleScene(head) {
+    const body = head.nextElementSibling;
+    const tog = head.querySelector('.scene-toggle');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.scene-card-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.scene-toggle').forEach(t => t.classList.remove('open'));
+    if (!isOpen) { body.classList.add('open'); tog.classList.add('open'); }
+  }
+  function toggleScript(head) {
+    const body = head.nextElementSibling;
+    const tog = head.querySelector('.toggle');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.script-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.toggle').forEach(t => t.classList.remove('open'));
+    if (!isOpen) { body.classList.add('open'); tog.classList.add('open'); }
+  }
+  function toggleFaq(q) {
+    const a = q.nextElementSibling;
+    const icon = q.querySelector('.faq-icon');
+    const isOpen = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(x => x.classList.remove('open'));
+    if (!isOpen) { a.classList.add('open'); icon.classList.add('open'); }
+  }
+</script>
+</body>
+</html>

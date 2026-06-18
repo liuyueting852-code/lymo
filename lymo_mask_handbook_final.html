@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黎沫牡丹焕亮面膜 · 主播手册</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0e;--bg2:#1a1917;--bg3:#242220;
+  --gold:#c9a84c;--gold-l:#e8c96a;
+  --text:#e8e4dc;--mid:#aeaaa2;--dim:#72706c;--white:#f5f2ec;
+  --div:rgba(201,168,76,0.16);--pad:18px;
+}
+body{background:var(--bg);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:var(--text);font-size:15px;line-height:1.75;padding-bottom:60px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:var(--bg);border-bottom:1px solid var(--div);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:48px}
+.nav-brand{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.nav-links{display:flex;gap:0;list-style:none;padding:0;margin:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:11px;color:var(--dim);text-decoration:none;padding:6px 10px;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+#prog{position:fixed;top:48px;left:0;height:2px;background:var(--gold);width:0;z-index:98}
+
+/* HERO */
+.hero{padding:44px var(--pad) 36px;border-bottom:1px solid var(--div)}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:26px;font-weight:700;color:var(--white);line-height:1.25;margin:0 0 6px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin-bottom:20px}
+.hero-intro{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:22px}
+.hero-intro strong{color:var(--white)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.rc{background:var(--bg2);border:1px solid var(--div);border-radius:10px;padding:13px;display:flex;align-items:center;gap:10px}
+.ri{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rt{font-size:13px;color:var(--white);font-weight:500}
+.rs{font-size:10px;color:var(--dim)}
+
+/* SECTION */
+.sec{padding:36px var(--pad) 0;border-top:1px solid var(--div)}
+.sec-eye{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin:0 0 18px}
+.sec-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:26px}
+.sec-end{height:36px}
+
+/* STEPS */
+.step-wrap{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+.step:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:0;width:1px;background:var(--div)}
+.snum{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold)}
+.sr{flex:1;padding-top:4px}
+.stitle{font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px}
+.grasp{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:14px}
+.grasp-lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.grasp p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.ilist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ii{background:var(--bg3);border-radius:7px;padding:11px 13px}
+.in{font-size:13px;color:var(--gold-l);font-weight:500;margin-bottom:3px}
+.id{font-size:12px;color:var(--dim);line-height:1.6}
+.solves{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.st{font-size:11px;background:rgba(74,140,92,.1);border:1px solid rgba(74,140,92,.3);color:#7ec99a;padding:3px 10px;border-radius:20px}
+.ftag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:5px 9px;margin-top:8px}
+.fl{font-size:11px;color:var(--gold)}
+.fn{font-size:10px;color:var(--dim)}
+.sum-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:18px 16px;margin:8px 0 36px}
+.sum-card .sl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sum-card .sm{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.sum-card .ss{font-size:12px;color:var(--dim)}
+
+/* SCENE CARDS */
+.scene-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.scene-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.sch{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.sch:hover{background:var(--bg3)}
+.sem{font-size:22px;flex-shrink:0}
+.sct{font-size:14px;color:var(--white);font-weight:500}
+.scs{font-size:11px;color:var(--dim);margin-top:2px}
+.stog{margin-left:auto;color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.stog.open{transform:rotate(45deg)}
+.scb{display:none;padding:0 16px 18px}
+.scb.open{display:block}
+.drows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.dr{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:7px;padding:10px 13px}
+.dl{font-size:13px;color:var(--mid)}
+.dn{font-size:13px;font-weight:700;color:var(--gold)}
+.dsrc{font-size:10px;color:var(--dim);margin-bottom:12px}
+.sscr{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:13px 14px}
+.ssd{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px}
+.sst{font-size:12px;color:var(--dim);border-left:2px solid var(--gold);padding-left:9px;line-height:1.6}
+
+/* SCRIPT CARDS */
+.script-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.script-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.scrh{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;cursor:pointer;user-select:none}
+.scrh:hover{background:var(--bg3)}
+.scrhl{display:flex;align-items:center;gap:11px}
+.scrn{font-size:22px;color:var(--gold);opacity:.3;font-weight:700;min-width:28px;line-height:1}
+.scrht{font-size:14px;color:var(--white);font-weight:500}
+.scrhs{font-size:11px;color:var(--dim);margin-top:2px}
+.tog{width:20px;height:20px;border-radius:50%;border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:transform .3s;flex-shrink:0}
+.tog.open{transform:rotate(45deg)}
+.scrb{display:none;padding:0 16px 16px}
+.scrb.open{display:block}
+.scrbox{background:var(--bg3);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px;font-size:14px;color:var(--mid);line-height:2}
+.scrbox strong{color:var(--white)}
+
+/* PUSH / CARDS */
+.psc{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin-bottom:10px}
+.pscl{font-size:13px;color:var(--white);font-weight:500;margin-bottom:6px}
+.psc p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.psc strong{color:var(--white)}
+.hbc{background:var(--bg2);border-radius:10px;padding:18px;margin-bottom:12px}
+.hbcl{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.hbc p{font-size:14px;color:var(--mid);line-height:1.9;margin:0}
+.hbc strong{color:var(--white)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.faq-item{background:var(--bg2);border-radius:10px;overflow:hidden}
+.faq-q{padding:14px 15px;font-size:14px;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q:hover{background:var(--bg3)}
+.faq-i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-i.open{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 15px 13px;font-size:13px;color:var(--mid);line-height:1.8;border-top:1px solid var(--bg3)}
+.faq-a.open{display:block;padding-top:11px}
+
+/* USAGE */
+.ulist{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.ustep{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border-radius:9px;padding:13px}
+.ucirc{width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.ut{font-size:13px;color:var(--mid);line-height:1.7}
+.ut strong{color:var(--white)}
+
+/* MEMORY */
+.mem-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:24px 18px;margin-bottom:36px}
+.mem-head{font-size:12px;letter-spacing:.1em;color:var(--gold);text-align:center;margin-bottom:20px}
+.mem-item{display:flex;gap:13px;margin-bottom:16px}
+.mem-item:last-child{margin-bottom:0}
+.mn{font-size:20px;font-weight:700;color:var(--gold);line-height:1;min-width:24px}
+.mt{font-size:13px;color:var(--white);font-weight:500;margin-bottom:3px}
+.md{font-size:12px;color:var(--dim);line-height:1.6}
+
+/* STORY */
+.story{background:var(--bg2);border:1px solid var(--div);border-radius:12px;padding:22px 18px;margin-bottom:36px;position:relative;overflow:hidden}
+.story::before{content:"\201C";position:absolute;top:-14px;left:12px;font-size:90px;color:var(--gold);opacity:.05;line-height:1;pointer-events:none}
+.story p{font-size:14px;color:var(--mid);line-height:2;margin:0 0 10px;position:relative}
+.story p:last-child{margin:0}
+.story strong{color:var(--white)}
+.story .gold{color:var(--gold);font-weight:500}
+
+footer{padding:28px var(--pad);text-align:center;border-top:1px solid var(--div)}
+.fb{font-size:14px;color:var(--gold);letter-spacing:.18em;margin-bottom:5px}
+.fn2{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#scenes">场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&amp;A</a></li>
+    <li><a href="#usage">使用</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>牡丹焕亮</em>面膜</h1>
+  <div class="hero-sub">先读懂产品，再开口讲产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    这张面膜的核心是<strong>补水修护</strong>，不是美白。<br>
+    三重发酵打底 · 皮肤喝饱了稳下来<br>
+    <strong>水感到第二天——这才是它的真实卖点。</strong>
+  </p>
+  <div class="result-grid">
+    <div class="rc"><div class="ri">💧</div><div><div class="rt">深层补水</div><div class="rs">三重发酵 · 水感持续</div></div></div>
+    <div class="rc"><div class="ri">🌿</div><div><div class="rt">敏感急救</div><div class="rs">全肤质可用</div></div></div>
+    <div class="rc"><div class="ri">💄</div><div><div class="rt">妆前打底</div><div class="rs">服帖感明显</div></div></div>
+    <div class="rc"><div class="ri">✦</div><div><div class="rt">气色提亮</div><div class="rs">辅助改善暗沉</div></div></div>
+  </div>
+  <p style="font-size:12px;color:#72706c">↓ 向下读，搞懂这四件事的成分依据</p>
+</div>
+
+<!-- 配方逻辑 -->
+<div class="sec" id="logic">
+  <div class="sec-eye">Part 01 · 配方逻辑</div>
+  <p class="sec-title">先搞懂<br>这张面膜</p>
+  <p class="sec-desc">配方的核心逻辑只有一件事：<br>先把皮肤喝饱，喝饱了屏障才能稳，稳了才有后续一切。</p>
+
+  <div class="step-wrap">
+
+    <div class="step">
+      <div class="snum">一</div>
+      <div class="sr">
+        <div class="stitle">三重发酵打底，渗透力天然高</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>普通面膜第一位是水——这张第一位是发酵液。发酵液里的小分子活性成分，皮肤接收效率天然就比水高，这是整张面膜水感好的根本原因。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">乳酸杆菌发酵产物 ← 成分表第一位，不是水</div><div class="id">整张面膜的基础是发酵液而不是普通水，渗透力和活性成分浓度天然更高</div></div>
+          <div class="ii"><div class="in">酵母菌/大米发酵产物滤液</div><div class="id">大米发酵，富含氨基酸和有机酸，辅助改善暗沉的基础在这里</div></div>
+          <div class="ii"><div class="in">乳酸杆菌/大豆提取物发酵产物滤液</div><div class="id">大豆发酵，小分子异黄酮，协同屏障修护</div></div>
+          <div class="ii"><div class="in">甘油 + 丁二醇</div><div class="id">经典保湿溶剂，和发酵液配合形成多层次补水，让水分真正进到角质层</div></div>
+        </div>
+        <div class="ftag"><span style="font-size:12px">🧬</span><div><div class="fl">三重发酵：乳酸杆菌 · 酵母菌/大米 · 乳酸杆菌/大豆</div><div class="fn">与中耀博研自研发酵技术体系同源</div></div></div>
+        <div class="solves"><span class="st">✓ 吸收快不黏腻</span><span class="st">✓ 水感持续到第二天</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">二</div>
+      <div class="sr">
+        <div class="stitle">舒缓 + 锁水，敏感肌放心用</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>水补进去了，下一步是锁住、稳住。尿囊素是这张成分表里浓度最足的舒缓成分，排在主成分区——敏感肌、刷酸后、泛红的皮肤，贴上去马上感觉皮肤平静下来。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">尿囊素 ← 排主成分区，浓度足</div><div class="id">促进细胞更新，舒缓刺激感。排在前面意味着浓度够，敏感肌急救用放心</div></div>
+          <div class="ii"><div class="in">甜菜碱</div><div class="id">天然渗透调节剂，保水同时降低配方刺激性，敏感肌友好</div></div>
+          <div class="ii"><div class="in">鞘氨醇单胞菌（SPHINGOMONAS）发酵产物提取物</div><div class="id">天然多糖，类玻尿酸前体，锁住补进去的水分；同时辅助修复屏障脂质层</div></div>
+          <div class="ii"><div class="in">油橄榄果油 + 1,2-己二醇</div><div class="id">油橄榄果油在皮肤表面形成轻薄防水膜；1,2-己二醇温和防腐兼保湿，减少传统防腐剂用量</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 敏感肌急救</span><span class="st">✓ 泛红平静下来</span><span class="st">✓ 水分锁住不蒸发</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">三</div>
+      <div class="sr">
+        <div class="stitle">牡丹提取物，辅助改善暗沉</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>牡丹根提取物排在微量区——不是主效成分，但不是噱头。坚持用，气色会慢慢好一点。<br>想要强效美白的，这张不是对的选择；想要皮肤水润、气色稳定的，这张正好。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">牡丹（PAEONIA SUFFRUTICOSA）根提取物</div><div class="id">含没食子酸，有辅助抑制黑色素生成的作用。排微量区，效果是缓慢积累的，不是立即提亮</div></div>
+          <div class="ii"><div class="in">透明质酸钠</div><div class="id">排末位微量，辅助锁水背书，消费者认知度高可以提</div></div>
+          <div class="ii"><div class="in">对羟基苯乙酮</div><div class="id">温和抗氧化兼协同防腐，让肤色整体更通透</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 辅助改善暗沉</span><span class="st">✓ 坚持用气色更好</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sum-card">
+    <div class="sl">一句话记住</div>
+    <div class="sm">三重发酵精华注入，敷一片 · 水感到第二天</div>
+    <div class="ss">核心是补水修护，提亮是加分项——方向搞对，话才说得服气</div>
+  </div>
+</div>
+
+<!-- 销售场景 -->
+<div class="sec" id="scenes">
+  <div class="sec-eye">Part 02 · 销售场景</div>
+  <p class="sec-title">什么人<br>最需要这张面膜</p>
+  <p class="sec-desc">根据直播间弹幕，找到对应的人，直接用场景话术。</p>
+
+  <div class="scene-cards">
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">💧</div>
+        <div><div class="sct">干皮 · 换季 · 空调房缺水</div><div class="scs">弹幕：「皮肤好干」「起皮」「换季缺水」「空调吹干了」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">主力场景 · 转化最快</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">发酵液底层</div><div class="dn">三重 · 第一位非水</div></div>
+          <div class="dr"><div class="dl">保湿层次</div><div class="dn">渗透 + 锁水双层</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「干皮敷面膜，敷完20分钟还是干？那就是只补水没锁水。这张面膜第一位成分不是水，是发酵液——甜菜碱、鞘氨醇单胞菌多糖往里渗，油橄榄果油在外面封。就像先往杯子里加水，再盖上盖子。敷完水分真的留得住，第二天早上摸脸还是软的。」</div>
+          <div class="sst">话术：「补水不锁水等于白补——这张面膜两件事同时做」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌿</div>
+        <div><div class="sct">敏感肌 · 泛红 · 刷酸后修复</div><div class="scs">弹幕：「敏感肌」「容易红」「刷酸后」「屏障薄」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">主力场景 · 客群精准</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">舒缓成分</div><div class="dn">尿囊素 · 主成分区</div></div>
+          <div class="dr"><div class="dl">防腐体系</div><div class="dn">1,2-己二醇 · 温和</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「敏感肌挑面膜，最重要看两件事：防腐剂是什么，有没有香精。这张防腐用1,2-己二醇，比传统防腐剂温和很多。尿囊素排在主成分区，浓度足够，敷上去皮肤泛红的感觉真的会平静下来。刷酸之后、换季皮肤不稳定的时候，贴上去修一修。」</div>
+          <div class="sst">话术：「先稳住皮肤，再去追求效果——这张做的是第一步」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">💄</div>
+        <div><div class="sct">妆前打底 · 底妆服帖</div><div class="scs">弹幕：「上妆假面」「粉底卡粉」「想上妆好看」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">场景切入 · 即时感知强</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">见效时机</div><div class="dn">敷完立即有感</div></div>
+          <div class="dr"><div class="dl">使用时长</div><div class="dn">10–15 分钟</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「上妆之前皮肤干燥粗糙，粉底推上去假面感很强——根本原因是皮肤缺水，表面不平整。出门前敷这张15分钟，揭下来轻拍吸收，皮肤变水嫩服帖，粉底液推上去轻薄自然，照片里完全不一样。」</div>
+          <div class="sst">话术：「底妆好不好看，一半取决于皮肤底子——妆前这15分钟值得花」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🛍</div>
+        <div><div class="sct">已买三抗精华 · 连带购买</div><div class="scs">弹幕：「我有三抗」「能一起用吗」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">连带销售 · 今日状态 + 长期底子</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">面膜</div><div class="dn">集中补给 · 今天的状态</div></div>
+          <div class="dr"><div class="dl">精华</div><div class="dn">日常守护 · 长期的底子</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「已经有三抗精华的姐妹，这张面膜是天然搭档——不是重复，是分工。面膜解决今天的状态：集中补给，15分钟皮肤喝饱。精华守护长期的底子：每天抗氧修护，一个月看变化。顺序：洁面→面膜→精华→乳液，面膜把皮肤打开，精华成分进得更深更久。」</div>
+          <div class="sst">话术：「面膜管今天，精华管以后——两件事都重要，缺一个都不完整」</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 话术 -->
+<div class="sec" id="scripts">
+  <div class="sec-eye">Part 03 · 直播话术</div>
+  <p class="sec-title">四个痛点<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px">说问题 → 说原因 → 说这张面膜怎么解决</p>
+
+  <div class="script-cards">
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">01</div><div><div class="scrht">为什么叫"牡丹焕亮"，亮在哪</div><div class="scrhs">开场必讲 · 管理预期</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        很多人看到"焕亮"两个字，以为是美白面膜——这里要说清楚。<br><br>
+        这张面膜的亮，不是加了珠光粉的那种反光，也不是美白产品那种淡斑提亮。<br><br>
+        它的亮是：皮肤补水之后自然透出来的光感。皮肤干燥的时候显暗、显黄，是因为角质层缺水、表面不平整。补水之后皮肤变得饱满透亮——这是真实可感知的"亮"。<br><br>
+        牡丹根提取物排在微量区，有辅助改善暗沉的作用，坚持用两周气色会好一点。<strong>但主力宣称是补水，提亮是加分项，不要反过来说。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">02</div><div><div class="scrht">发酵面膜和普通面膜的区别</div><div class="scrhs">差异化 · 建立溢价感</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        同样25g的面膜，为什么有的贴上去滑嫩、有的贴完干涩紧绷？<br><br>
+        区别在第一位成分。普通面膜第一位是水，这张第一位是乳酸杆菌发酵产物。<br><br>
+        发酵液里含有天然的有机酸、氨基酸、小分子多肽，皮肤接收效率天然就比水高。加上酵母菌/大米发酵、大豆发酵，三个不同来源的发酵体系协同——<br><br>
+        <strong>这是工厂研究多年发酵技术的直接应用，不是买来的通用原料堆出来的。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">03</div><div><div class="scrht">敏感肌能不能用</div><div class="scrhs">解除顾虑 · 扩大客群</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        敏感肌看面膜成分表最在意两件事：防腐剂是什么、有没有香精。<br><br>
+        这张：防腐用1,2-己二醇加对羟基苯乙酮，比传统防腐剂温和，欧美clean beauty品牌用的就是这个体系。成分表里没有香精，植物精油用量极微排末位，敏感肌整体友好。<br><br>
+        尿囊素排在主成分区，浓度足够，是这张面膜最扎实的敏感舒缓背书。<br><br>
+        <strong>急性过敏期——大面积红肿脱皮——先就医，稳定后再用。正常敏感肌，这张合适。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">04</div><div><div class="scrht">和三抗精华配合用</div><div class="scrhs">连带销售 · 提客单价</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        已经有三抗精华的姐妹，这张面膜是天然搭档——不是重复，是互补。<br><br>
+        面膜和精华是分工，不是重复。面膜解决今天的状态——集中补给，15分钟皮肤喝饱，当晚感觉到。精华守护长期的底子——每天抗氧修护，一个月积累出来的。<br><br>
+        <strong>顺序：洁面→面膜→精华→乳液。面膜把皮肤打开，精华成分进得更深、留得更久——两件事都重要，缺一个都不完整。</strong>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 品牌故事 -->
+<div class="sec">
+  <div class="sec-eye">Part 04 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>这个品牌的创始人在化妆品行业做了二十年。</p>
+    <p>从小在化妆品生产的环境里长大，家里饭桌上聊的都是<strong>哪批原料好、哪个配方要改、哪批货卖得好</strong>。</p>
+    <p>这张牡丹面膜用的三重发酵技术，来自工厂旗下专门研究<strong>传统中草药发酵提取</strong>的研发体系——不是买来的通用原料，是自己研究出来的。</p>
+    <p class="gold">做这个产品只有一个标准：自己家人敢用、消费者买得起的配方。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 逼单 -->
+<div class="sec" id="push">
+  <div class="sec-eye">Part 05 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px">根据弹幕情况选场景，再接通用话术收单。</p>
+
+  <div class="psc"><div class="pscl">💧 干皮/换季缺水的姐妹</div><p>三重发酵液打底，补水不锁水等于白补——这张两件事同时做。<strong>敷完第二天早上摸脸，就知道区别在哪。</strong></p></div>
+  <div class="psc"><div class="pscl">🌿 敏感肌/屏障受损的姐妹</div><p>尿囊素主成分区浓度足，1,2-己二醇温和防腐，敏感肌放心用。<strong>刷酸后、换季皮肤泛红的时候，这张贴上去先稳住。</strong></p></div>
+  <div class="psc"><div class="pscl">💄 妆前底妆不服帖的姐妹</div><p>皮肤缺水表面不平整，粉底推上去自然假面。出门前敷15分钟，揭下来轻拍吸收。<strong>底妆好不好看，一半取决于皮肤底子。</strong></p></div>
+  <div class="psc"><div class="pscl">🛍 已买三抗精华的姐妹</div><p>面膜管今天的状态，精华守长期的底子，两件事分工不重复。<strong>一起用，精华成分进去更深、留得更久。</strong></p></div>
+
+  <div class="hbc" style="margin-top:18px">
+    <div class="hbcl">价值锚定</div>
+    <p>三重发酵液打底（不是水），尿囊素主成分区，鞘氨醇单胞菌多糖，油橄榄果油锁水——配方诚意是真实的，不是堆字。<strong>今天直播间最低价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">工厂直供背书</div>
+    <p>生产企业天津尚美化妆品有限公司，核心发酵技术来自自有研发体系，没有中间商溢价。<strong>工厂直供，价格打下来的。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">临门收单</div>
+    <p>干皮的、敏感泛红的、想妆前底子好的——这张都可以试。三重发酵打底，配方逻辑清晰，用完当晚有感。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- FAQ -->
+<div class="sec" id="faq">
+  <div class="sec-eye">Part 06 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>这个能美白吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">直接说清楚：这张面膜的核心是补水修护，不是美白产品。牡丹根提取物有辅助改善暗沉的作用，坚持用两周气色会好一点——但如果你主要想淡斑祛斑，这张不是对的选择。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>敏感肌可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">正常敏感肌可以用，而且适合。尿囊素浓度足，甜菜碱降刺激性，防腐体系温和。急性过敏期——大面积红肿脱皮刺痛——先就医，稳定后再考虑。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>一周用几次？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">每周2到3次。皮肤极度缺水或换季急救可以连用三天，之后调回常规频率。面膜是加强步骤，不替代日常水乳。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>揭下来要不要洗脸？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">不用立刻洗。揭下来用手掌轻拍按帮助吸收约1分钟，让剩余精华继续渗透。不觉得黏腻就直接进行后续护肤步骤，有白色残留感才洗。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和三抗精华能一起用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">可以，建议搭配。顺序：洁面→面膜→精华→乳液/面霜。面膜补给今天的状态，精华守护长期的底子，分工不重复。面膜把皮肤打开，精华成分进得更深更久。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和其他面膜有什么不一样？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">最关键一点：成分表第一位是发酵液不是水。发酵液里的活性小分子皮肤吸收效率更高，三重发酵体系来自工厂自研技术，不是买来的通用原料。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 使用示范 -->
+<div class="sec" id="usage">
+  <div class="sec-eye">Part 07 · 使用示范</div>
+  <p class="sec-title">直播里可以<br>边贴边讲</p>
+  <div class="ulist">
+    <div class="ustep"><div class="ucirc">①</div><div class="ut"><strong>洁面后使用</strong>——皮肤干净，毛孔刚刚打开，吸收效率最高</div></div>
+    <div class="ustep"><div class="ucirc">②</div><div class="ut"><strong>打开包装取出面膜</strong>——袋内残余精华液别倒掉，涂脖子或手臂</div></div>
+    <div class="ustep"><div class="ucirc">③</div><div class="ut"><strong>展开贴合面部</strong>——从鼻梁往外轻抚，排出气泡，均匀贴合</div></div>
+    <div class="ustep"><div class="ucirc">④</div><div class="ut"><strong>静敷10–15分钟</strong>——不要敷到干透，面膜干了会反向吸走皮肤水分</div></div>
+    <div class="ustep"><div class="ucirc">⑤</div><div class="ut"><strong>揭下面膜轻拍吸收</strong>——不要马上洗，让剩余精华继续渗透约1分钟</div></div>
+  </div>
+</div>
+
+<!-- 记忆卡 -->
+<div class="sec" style="border-top:1px solid var(--div);padding:36px var(--pad) 0">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="mem-card">
+    <div class="mem-head">进直播间前最后看一遍</div>
+    <div class="mem-item">
+      <div class="mn">1</div>
+      <div>
+        <div class="mt">核心卖点是补水，不是美白</div>
+        <div class="md">三重发酵打底 · 水感到第二天 · 提亮是加分项不是主宣称</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">2</div>
+      <div>
+        <div class="mt">三个转化最快的场景</div>
+        <div class="md">换季缺水 · 敏感急救 · 妆前打底——这三个当晚有感，不需要等两周</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">3</div>
+      <div>
+        <div class="mt">一个连带机会</div>
+        <div class="md">已买三抗精华的客户——面膜管今天，精华管以后，说清楚分工就能带动复购</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">LYMO 黎沫</div>
+  <div class="fn2">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=p+'%';
+});
+function toggleScene(h){
+  const b=h.nextElementSibling,t=h.querySelector('.stog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.stog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleScript(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scrb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleFaq(q){
+  const a=q.nextElementSibling,i=q.querySelector('.faq-i'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');i.classList.add('open');}
+}
+</script>
+</body>
+</html>

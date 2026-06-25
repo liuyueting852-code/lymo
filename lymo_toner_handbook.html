@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黎沫沁透焕肤精粹水 · 主播手册</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0e;--bg2:#1a1917;--bg3:#242220;
+  --gold:#c9a84c;--gold-l:#e8c96a;
+  --text:#e8e4dc;--mid:#aeaaa2;--dim:#72706c;--white:#f5f2ec;
+  --div:rgba(201,168,76,0.16);--pad:18px;
+}
+body{background:var(--bg);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:var(--text);font-size:15px;line-height:1.75;padding-bottom:60px}
+
+nav{position:sticky;top:0;z-index:99;background:var(--bg);border-bottom:1px solid var(--div);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:48px}
+.nav-brand{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.nav-links{display:flex;gap:0;list-style:none;padding:0;margin:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:11px;color:var(--dim);text-decoration:none;padding:6px 10px;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+#prog{position:fixed;top:48px;left:0;height:2px;background:var(--gold);width:0;z-index:98}
+
+.hero{padding:44px var(--pad) 36px;border-bottom:1px solid var(--div)}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:26px;font-weight:700;color:var(--white);line-height:1.25;margin:0 0 6px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin-bottom:20px}
+.hero-intro{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:22px}
+.hero-intro strong{color:var(--white)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.rc{background:var(--bg2);border:1px solid var(--div);border-radius:10px;padding:13px;display:flex;align-items:center;gap:10px}
+.ri{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rt{font-size:13px;color:var(--white);font-weight:500}
+.rs{font-size:10px;color:var(--dim)}
+
+.sec{padding:36px var(--pad) 0;border-top:1px solid var(--div)}
+.sec-eye{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin:0 0 18px}
+.sec-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:26px}
+.sec-end{height:36px}
+
+.step-wrap{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+.step:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:0;width:1px;background:var(--div)}
+.snum{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold)}
+.sr{flex:1;padding-top:4px}
+.stitle{font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px}
+.grasp{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:14px}
+.grasp-lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.grasp p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.ilist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ii{background:var(--bg3);border-radius:7px;padding:11px 13px}
+.in{font-size:13px;color:var(--gold-l);font-weight:500;margin-bottom:3px}
+.id{font-size:12px;color:var(--dim);line-height:1.6}
+.solves{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.st{font-size:11px;background:rgba(74,140,92,.1);border:1px solid rgba(74,140,92,.3);color:#7ec99a;padding:3px 10px;border-radius:20px}
+.ftag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:5px 9px;margin-top:8px}
+.fl{font-size:11px;color:var(--gold)}
+.fn{font-size:10px;color:var(--dim)}
+.sum-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:18px 16px;margin:8px 0 36px}
+.sum-card .sl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sum-card .sm{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.sum-card .ss{font-size:12px;color:var(--dim)}
+
+.scene-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.scene-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.sch{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.sch:hover{background:var(--bg3)}
+.sem{font-size:22px;flex-shrink:0}
+.sct{font-size:14px;color:var(--white);font-weight:500}
+.scs{font-size:11px;color:var(--dim);margin-top:2px}
+.stog{margin-left:auto;color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.stog.open{transform:rotate(45deg)}
+.scb{display:none;padding:0 16px 18px}
+.scb.open{display:block}
+.drows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.dr{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:7px;padding:10px 13px}
+.dl{font-size:13px;color:var(--mid)}
+.dn{font-size:13px;font-weight:700;color:var(--gold)}
+.dsrc{font-size:10px;color:var(--dim);margin-bottom:12px}
+.sscr{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:13px 14px}
+.ssd{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px}
+.sst{font-size:12px;color:var(--dim);border-left:2px solid var(--gold);padding-left:9px;line-height:1.6}
+
+.script-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.script-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.scrh{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;cursor:pointer;user-select:none}
+.scrh:hover{background:var(--bg3)}
+.scrhl{display:flex;align-items:center;gap:11px}
+.scrn{font-size:22px;color:var(--gold);opacity:.3;font-weight:700;min-width:28px;line-height:1}
+.scrht{font-size:14px;color:var(--white);font-weight:500}
+.scrhs{font-size:11px;color:var(--dim);margin-top:2px}
+.tog{width:20px;height:20px;border-radius:50%;border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:transform .3s;flex-shrink:0}
+.tog.open{transform:rotate(45deg)}
+.scrb{display:none;padding:0 16px 16px}
+.scrb.open{display:block}
+.scrbox{background:var(--bg3);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px;font-size:14px;color:var(--mid);line-height:2}
+.scrbox strong{color:var(--white)}
+
+.psc{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin-bottom:10px}
+.pscl{font-size:13px;color:var(--white);font-weight:500;margin-bottom:6px}
+.psc p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.psc strong{color:var(--white)}
+.hbc{background:var(--bg2);border-radius:10px;padding:18px;margin-bottom:12px}
+.hbcl{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.hbc p{font-size:14px;color:var(--mid);line-height:1.9;margin:0}
+.hbc strong{color:var(--white)}
+
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.faq-item{background:var(--bg2);border-radius:10px;overflow:hidden}
+.faq-q{padding:14px 15px;font-size:14px;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q:hover{background:var(--bg3)}
+.faq-i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-i.open{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 15px 13px;font-size:13px;color:var(--mid);line-height:1.8;border-top:1px solid var(--bg3)}
+.faq-a.open{display:block;padding-top:11px}
+
+.ulist{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.ustep{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border-radius:9px;padding:13px}
+.ucirc{width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.ut{font-size:13px;color:var(--mid);line-height:1.7}
+.ut strong{color:var(--white)}
+
+.mem-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:24px 18px;margin-bottom:36px}
+.mem-head{font-size:12px;letter-spacing:.1em;color:var(--gold);text-align:center;margin-bottom:20px}
+.mem-item{display:flex;gap:13px;margin-bottom:16px}
+.mem-item:last-child{margin-bottom:0}
+.mn{font-size:20px;font-weight:700;color:var(--gold);line-height:1;min-width:24px}
+.mt{font-size:13px;color:var(--white);font-weight:500;margin-bottom:3px}
+.md{font-size:12px;color:var(--dim);line-height:1.6}
+
+.story{background:var(--bg2);border:1px solid var(--div);border-radius:12px;padding:22px 18px;margin-bottom:36px;position:relative;overflow:hidden}
+.story::before{content:"\201C";position:absolute;top:-14px;left:12px;font-size:90px;color:var(--gold);opacity:.05;line-height:1;pointer-events:none}
+.story p{font-size:14px;color:var(--mid);line-height:2;margin:0 0 10px;position:relative}
+.story p:last-child{margin:0}
+.story strong{color:var(--white)}
+.story .gold{color:var(--gold);font-weight:500}
+
+/* 明星成分卡 */
+.star-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.sg{background:var(--bg3);border-radius:10px;padding:13px;display:flex;gap:12px}
+.sg-tag{font-size:10px;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:2px 7px;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:2px}
+.sg-name{font-size:13px;color:var(--gold-l);font-weight:600;margin-bottom:3px}
+.sg-desc{font-size:12px;color:var(--mid);line-height:1.6}
+.sg-talk{font-size:11px;color:var(--dim);border-left:2px solid rgba(201,168,76,.3);padding-left:8px;margin-top:6px;line-height:1.6;font-style:italic}
+
+footer{padding:28px var(--pad);text-align:center;border-top:1px solid var(--div)}
+.fb{font-size:14px;color:var(--gold);letter-spacing:.18em;margin-bottom:5px}
+.fn2{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#star">明星成分</a></li>
+    <li><a href="#scenes">场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&amp;A</a></li>
+    <li><a href="#usage">使用</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>沁透焕肤</em>精粹水</h1>
+  <div class="hero-sub">先读懂产品，再开口讲产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    这不是一款普通化妆水。<br>
+    双发酵底层 + 埃及蓝睡莲 + 烟酰胺 + 积雪草——<br>
+    <strong>先让皮肤喝透，再让皮肤亮起来，护肤后续步骤进得更深。</strong>
+  </p>
+  <div class="result-grid">
+    <div class="rc"><div class="ri">💧</div><div><div class="rt">深层补水</div><div class="rs">双发酵 · 多重保湿</div></div></div>
+    <div class="rc"><div class="ri">✦</div><div><div class="rt">提亮均匀</div><div class="rs">烟酰胺 · 玫瑰茄发酵</div></div></div>
+    <div class="rc"><div class="ri">🌿</div><div><div class="rt">舒缓修护</div><div class="rs">积雪草 · 中草药矩阵</div></div></div>
+    <div class="rc"><div class="ri">🌸</div><div><div class="rt">精粹导入</div><div class="rs">后续护肤进得更深</div></div></div>
+  </div>
+  <p style="font-size:12px;color:var(--dim)">↓ 向下读，搞懂这四件事的成分依据</p>
+</div>
+
+<!-- 配方逻辑 -->
+<div class="sec" id="logic">
+  <div class="sec-eye">Part 01 · 配方逻辑</div>
+  <p class="sec-title">先搞懂<br>这款精粹水</p>
+  <p class="sec-desc">精粹水不等于化妆水——这款的底层逻辑是发酵液打底，中层是修护提亮，后续护肤成分进得更深更久。</p>
+
+  <div class="step-wrap">
+
+    <div class="step">
+      <div class="snum">一</div>
+      <div class="sr">
+        <div class="stitle">双发酵打底，渗透力天然更高</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>普通化妆水第一位是水。这款第一位是乳酸杆菌发酵产物，第二位是二裂酵母发酵产物滤液——双发酵液打底，小分子活性成分皮肤接收效率天然比水高。用完之后后续护肤步骤也进得更深，这就是"精粹"两个字的意义。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">乳酸杆菌发酵产物 ← 第一位，不是水</div><div class="id">整瓶产品的吸收底层是发酵液，天然小分子结构渗透快，和黎沫牡丹面膜同源发酵体系</div></div>
+          <div class="ii"><div class="in">二裂酵母发酵产物滤液</div><div class="id">激活皮肤DNA自修复通路，抗老修护底层，单独拿出来是大牌精华的核心成分</div></div>
+          <div class="ii"><div class="in">丁二醇 + 甘油 + 甲基丙二醇 + 聚甘油-3</div><div class="id">四重保湿剂协同——从表层到深层全覆盖，补水不是靠一个成分堆量，是靠层次完整</div></div>
+          <div class="ii"><div class="in">乙酰壳糖胺</div><div class="id">类透明质酸前体，促进皮肤自身合成玻尿酸，同时辅助细胞更新，保湿效果持久</div></div>
+        </div>
+        <div class="ftag"><span style="font-size:12px">🧬</span><div><div class="fl">双发酵底层：乳酸杆菌 + 二裂酵母</div><div class="fn">与中耀博研自研发酵技术体系同源</div></div></div>
+        <div class="solves"><span class="st">✓ 吸收快不黏腻</span><span class="st">✓ 后续护肤进得更深</span><span class="st">✓ 发酵提亮打底</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">二</div>
+      <div class="sr">
+        <div class="stitle">烟酰胺 + 玫瑰茄发酵，提亮有据可查</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>这款有两条提亮路径：烟酰胺抑制黑色素转移（从源头减少色素沉积），乳酸杆菌/玫瑰茄花发酵产物提供花卉发酵活性成分辅助均匀肤色。两个方向配合，提亮不是靠一个成分单打独斗。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">烟酰胺（维生素B3）</div><div class="id">抑制黑色素小体向角质细胞转移，提亮均匀肤色，同时修护皮肤屏障、细化毛孔。成分党认知度极高，可以单独作为卖点讲</div></div>
+          <div class="ii"><div class="in">乳酸杆菌/玫瑰茄花发酵产物滤液</div><div class="id">玫瑰茄（洛神花）富含花青素和有机酸，经乳酸杆菌发酵后活性提升，辅助提亮 + 抗氧化双效</div></div>
+          <div class="ii"><div class="in">药用层孔菌（FOMES OFFICINALIS）提取物</div><div class="id">白桦茸类菌菇提取，抗氧化 + 辅助提亮，协同烟酰胺的均匀肤色效果</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 提亮肤色</span><span class="st">✓ 淡化暗沉</span><span class="st">✓ 均匀肤色</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">三</div>
+      <div class="sr">
+        <div class="stitle">中草药舒缓矩阵 + 积雪草修护</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>这款的中草药线是这款的隐藏亮点——丹参、金盏花、马齿苋、黄连、黄柏，每一个都有具体的抗炎舒缓或修护文献。积雪草修护再生成分党高认知，木瓜蛋白酶温和代谢老废角质，两个加在一起是"修护 + 更新"的双效逻辑。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">积雪草提取物</div><div class="id">积雪草苷促进胶原合成，修护受损屏障，成分党圈子认知度极高。刷酸后、屏障薄的客户看到这个成分会主动加购</div></div>
+          <div class="ii"><div class="in">丹参提取物</div><div class="id">丹参酮抗氧化 + 促进微循环，改善皮肤暗沉发灰的根本原因之一。黎沫品牌中草药调性的体现</div></div>
+          <div class="ii"><div class="in">马齿苋提取物 + 金盏花提取物</div><div class="id">双重植物抗炎，舒缓泛红和刺激感，敏感肌可以安心用</div></div>
+          <div class="ii"><div class="in">黄连根提取物 + 黄檗树皮提取物</div><div class="id">黄连素 + 黄柏苷，传统中药抗菌抗炎成分，痘痘肌日常维稳有辅助效果</div></div>
+          <div class="ii"><div class="in">木瓜蛋白酶</div><div class="id">温和蛋白质水解酶，代谢老废角质，配合积雪草形成"先清再修"的循环，皮肤状态稳步改善</div></div>
+          <div class="ii"><div class="in">北美金缕梅水 + 埃及蓝睡莲花水</div><div class="id">金缕梅收敛舒缓毛孔；埃及蓝睡莲是小众高端成分，富含生物碱和黄酮类抗氧化物，话题性强——详见明星成分</div></div>
+          <div class="ii"><div class="in">泛醇（维生素B5）</div><div class="id">修护促渗透，帮助其他活性成分更深入渗透，同时锁住水分</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 舒缓泛红</span><span class="st">✓ 修护屏障</span><span class="st">✓ 温和代谢老角质</span><span class="st">✓ 中草药调性</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sum-card">
+    <div class="sl">一句话记住</div>
+    <div class="sm">双发酵导入 · 烟酰胺提亮 · 中草药修护</div>
+    <div class="ss">不只是化妆水——是让后续所有护肤步骤发挥更大作用的底层产品</div>
+  </div>
+</div>
+
+<!-- 明星成分 -->
+<div class="sec" id="star">
+  <div class="sec-eye">Part 02 · 明星成分</div>
+  <p class="sec-title">三个成分<br>单独拎出来讲</p>
+  <p class="sec-desc">这三个成分话题性强，成分党粉丝看到会主动搜索验证——讲出来直接建立信任。</p>
+
+  <div class="star-grid">
+    <div class="sg">
+      <div class="sg-tag">话题最强</div>
+      <div>
+        <div class="sg-name">埃及蓝睡莲花水</div>
+        <div class="sg-desc">产自尼罗河流域的古老植物，古埃及人把它用在宗教仪式和传统医学里。现代研究发现其中富含阿朴菲类生物碱和黄酮类化合物，抗氧化 + 舒缓双效。在护肤品里属于相对小众的高端成分，出现在这个价位的产品里有真实溢价感。</div>
+        <div class="sg-talk">直播间：「这款有一个成分很少见——埃及蓝睡莲，产自尼罗河的古老植物，古埃及用了几千年。富含黄酮类抗氧化物，放在精粹水里是真实的溢价成分，不是凑字数的。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">认知度最高</div>
+      <div>
+        <div class="sg-name">烟酰胺（维生素B3）</div>
+        <div class="sg-desc">成分党最认可的提亮成分之一，机理清晰——抑制黑色素小体从黑色素细胞转移到角质形成细胞，从转移环节切断色素沉积路径。同时修护屏障、细化毛孔，是少数"一个成分解决多个问题"的实力派成分。这款发酵液底层先打开渗透通道，烟酰胺进得更深，效果更好。</div>
+        <div class="sg-talk">直播间：「有烟酰胺，而且这款发酵液底层先打开皮肤通道，烟酰胺进得比普通含烟酰胺的水更深——这是配方逻辑决定的，不是随便说说。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">修护高认知</div>
+      <div>
+        <div class="sg-name">积雪草提取物</div>
+        <div class="sg-desc">积雪草苷和羟基积雪草苷，促进成纤维细胞合成胶原蛋白，修护受损皮肤屏障。近几年在成分党圈子和医美后护理领域热度持续上升，"刷酸后用积雪草修护"已经是基本共识。这款把积雪草放在修护矩阵里，配合马齿苋、金盏花，舒缓修护是协同作用而不是单打独斗。</div>
+        <div class="sg-talk">直播间：「刷酸后、换季皮肤薄的时候——这款有积雪草，成分党知道积雪草修护是什么意义，敏感脆弱期用这款打底，后续护肤才安全。」</div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 销售场景 -->
+<div class="sec" id="scenes">
+  <div class="sec-eye">Part 03 · 销售场景</div>
+  <p class="sec-title">什么人<br>最需要这款</p>
+  <p class="sec-desc">根据直播间弹幕，找到对应的人，直接用场景话术。</p>
+
+  <div class="scene-cards">
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">💧</div>
+        <div><div class="sct">皮肤缺水 · 护肤品吸收不好</div><div class="scs">弹幕：「皮肤不吸收」「涂了还是干」「护肤品浮在脸上」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">主力场景 · 转化最快</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">底层逻辑</div><div class="dn">双发酵导入</div></div>
+          <div class="dr"><div class="dl">保湿层次</div><div class="dn">四重保湿剂</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「护肤品涂上去浮在脸上、吸收不进去——问题不在护肤品，在皮肤"没打开"。这款第一位是发酵液不是水，发酵小分子天然渗透力强，用完皮肤像海绵一样打开，后面的精华乳液才真的进得去。很多姐妹用了之后说，同一瓶精华效果好了一大截，原因就在这里。」</div>
+          <div class="sst">话术：「护肤顺序第一步用对了，后面所有步骤的效果都会放大」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">✦</div>
+        <div><div class="sct">脸暗 · 肤色不均 · 想提亮</div><div class="scs">弹幕：「脸暗」「肤色不均」「想提亮」「烟酰胺」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">核心卖点场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">提亮核心</div><div class="dn">烟酰胺</div></div>
+          <div class="dr"><div class="dl">协同</div><div class="dn">玫瑰茄发酵</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「想提亮——很多人买了烟酰胺产品没效果，是因为皮肤根本没把烟酰胺吸收进去。这款的逻辑是：发酵液底层先打开皮肤通道，烟酰胺再进来——进得更深，停留更久，效果才真实。加上玫瑰茄花发酵辅助，两条路同时走，不是靠单一成分硬撑。」</div>
+          <div class="sst">话术：「烟酰胺好不好使，关键在能不能进去——这款解决的就是这个问题」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌿</div>
+        <div><div class="sct">敏感肌 · 刷酸后 · 屏障受损</div><div class="scs">弹幕：「敏感肌」「刷酸后修复」「皮肤容易红」「屏障薄」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">敏感肌精准场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">修护核心</div><div class="dn">积雪草 + 泛醇</div></div>
+          <div class="dr"><div class="dl">舒缓矩阵</div><div class="dn">马齿苋 · 金盏花</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「敏感肌刷酸之后最需要的两件事：补水 + 修护。这款有积雪草修护屏障，马齿苋和金盏花协同抗炎，木瓜蛋白酶温和帮助代谢老废角质——不是用刺激性的方式去角质，是用酶解温和处理。防腐用1,2-己二醇，整体配方对敏感肌友好。刷酸第二天早上用这款打底，皮肤修复期最合适。」</div>
+          <div class="sst">话术：「刷酸后皮肤最脆弱，第一步用对了才能快速恢复——这款做的就是这个」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">💄</div>
+        <div><div class="sct">底妆不服帖 · 妆前打底</div><div class="scs">弹幕：「上妆假面」「粉底卡粉」「底妆不持久」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">妆前场景 · 即时有感</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">见效时机</div><div class="dn">用完立即有感</div></div>
+          <div class="dr"><div class="dl">原理</div><div class="dn">补水 + 平滑角质</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「底妆假面、卡粉——根本原因是皮肤缺水、表面不平整。出门前用这款：发酵液补水让皮肤饱满，木瓜蛋白酶温和平滑表面角质，涂底妆服帖感完全不一样。而且积雪草和泛醇让皮肤状态更稳，底妆持续时间也更长。」</div>
+          <div class="sst">话术：「妆前这一步用对了，同一支粉底液能用出完全不同的效果」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🛍</div>
+        <div><div class="sct">已买牡丹面膜或三抗精华 · 连带购买</div><div class="scs">弹幕：「我有面膜」「我有精华」「能一起用吗」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">连带销售 · 体系完整性</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">精粹水</div><div class="dn">打开 · 导入底层</div></div>
+          <div class="dr"><div class="dl">面膜/精华</div><div class="dn">集中补给/持续守护</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「已经有牡丹面膜或者三抗精华的姐妹，精粹水是天然搭档——用精粹水打开皮肤之后，面膜的成分进得更深，精华的活性成分留得更久。不是重复购买，是让你手里已经有的产品发挥更大的效果。」</div>
+          <div class="sst">话术：「精粹水是放大器，让手里已有的产品更好使」</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 话术 -->
+<div class="sec" id="scripts">
+  <div class="sec-eye">Part 04 · 直播话术</div>
+  <p class="sec-title">四个角度<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px">说问题 → 说原因 → 说这款怎么解决</p>
+
+  <div class="script-cards">
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">01</div><div><div class="scrht">精粹水和普通化妆水有什么区别</div><div class="scrhs">开场必讲 · 建立产品认知</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        很多人觉得化妆水可有可无——这款不是普通化妆水，是精粹水，区别在配方逻辑。<br><br>
+        普通化妆水第一位是水，主要功能是补水和帮助后续产品吸收。这款第一位是乳酸杆菌发酵产物，第二位是二裂酵母发酵产物——双发酵液底层，皮肤接收效率天然比水高，渗透速度也更快。<br><br>
+        <strong>用完之后皮肤像海绵喝饱水之后一样，后续精华乳液的成分进得更深更快——这款本身有效果，同时放大后续所有护肤步骤的效果。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">02</div><div><div class="scrht">烟酰胺为什么放在精粹水里</div><div class="scrhs">差异化 · 成分逻辑</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        烟酰胺很多产品都有——但放在哪个步骤里，效果差很多。<br><br>
+        烟酰胺要进到皮肤足够深的层次才能抑制黑色素转移。很多精华液里的烟酰胺，皮肤没有充分打开，吸收率其实有限。<br><br>
+        这款把烟酰胺放在精粹水里：发酵液先打开皮肤通道，烟酰胺随着发酵小分子一起进去，渗透深度更高。<br><br>
+        <strong>同样浓度的烟酰胺，进得深不深，决定了提亮效果能不能显现——这款的配方逻辑解决的就是这个问题。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">03</div><div><div class="scrht">埃及蓝睡莲是什么，为什么放进来</div><div class="scrhs">话题成分 · 建立溢价感</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        埃及蓝睡莲——来自尼罗河流域，古埃及文明里最神圣的植物之一，出现在法老时代的壁画和典籍里。<br><br>
+        在护肤领域，研究发现它富含阿朴菲类生物碱和黄酮类化合物，抗氧化能力强，同时有舒缓安神的效果。<br><br>
+        在国内市场这个成分相对小众，但欧美高端护肤品牌已经把它当作溢价成分在用。<br><br>
+        <strong>这款把它做成花水的形式加入——花水保留了更多植物活性成分，不是简单的提取物。这是这款配方在普通成分之外真正有话题性的地方。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">04</div><div><div class="scrht">中草药成分这么多，实际有没有用</div><div class="scrhs">破除顾虑 · 中草药党</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        成分表里有丹参、金盏花、积雪草、马齿苋、黄连、黄柏——六个中草药成分，有人会问，是不是凑字数的？<br><br>
+        不是。每一个都有具体功效文献：丹参酮促进循环改善暗沉，积雪草苷促进胶原合成修护屏障，马齿苋和金盏花协同抗炎，黄连素和黄柏苷抗菌抗炎辅助维稳。<br><br>
+        关键是：黎沫背后的工厂有专门研究中草药提取工艺的研发体系，不是买来的通用原料——每个成分的提取标准和来源可以追溯。<br><br>
+        <strong>这才是黎沫在"新本草护肤"这个方向上有底气讲的原因：不是把中草药名字印在瓶子上，是从原料端就开始认真的。</strong>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 品牌故事 -->
+<div class="sec">
+  <div class="sec-eye">Part 05 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>黎沫的创始人在化妆品行业做了二十年。</p>
+    <p>从小在化妆品生产的环境里长大，家里饭桌上聊的都是<strong>哪批原料好、哪个配方要改、哪批货卖得好</strong>。</p>
+    <p>这款精粹水里的丹参、积雪草、黄连这些中草药成分，背后有工厂旗下专门做<strong>传统中草药现代提取工艺</strong>的研发体系——不是采购市场买来的通用原料，是从源头把控的。</p>
+    <p class="gold">做黎沫只有一个标准：自己家人敢用、消费者买得起的配方。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 逼单 -->
+<div class="sec" id="push">
+  <div class="sec-eye">Part 06 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px">根据弹幕情况选场景，再接通用话术收单。</p>
+
+  <div class="psc"><div class="pscl">💧 护肤品吸收不好/皮肤总是干的姐妹</div><p>双发酵底层打开皮肤通道，四重保湿剂协同渗透，用完皮肤喝饱了，后续精华进得更深。<strong>今晚用上，明天早上皮肤摸起来就不一样。</strong></p></div>
+  <div class="psc"><div class="pscl">✦ 脸暗/肤色不均/想提亮的姐妹</div><p>发酵液打开通道 + 烟酰胺精准渗透 + 玫瑰茄花发酵辅助，提亮不是靠单一成分，是配方逻辑在发力。<strong>坚持用两周，肤色均匀感会明显不一样。</strong></p></div>
+  <div class="psc"><div class="pscl">🌿 敏感肌/刷酸后/屏障薄的姐妹</div><p>积雪草修护 + 马齿苋金盏花抗炎 + 木瓜蛋白酶温和代谢，配方整体温和无香精刺激。<strong>刷酸后第一步用这款，修护期缩短一半。</strong></p></div>
+  <div class="psc"><div class="pscl">🛍 已有黎沫其他产品的姐妹</div><p>精粹水是整个护肤步骤的放大器——用了这款，手里已有的面膜和精华效果都会更好。<strong>不是重复投资，是让已有的产品发挥最大价值。</strong></p></div>
+
+  <div class="hbc" style="margin-top:18px">
+    <div class="hbcl">价值锚定</div>
+    <p>双发酵底层（第一第二位均非水）、烟酰胺精准渗透、埃及蓝睡莲花水、积雪草修护、六味中草药矩阵——配方诚意在成分表里，看得见。<strong>今天直播间最低价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">工厂直供背书</div>
+    <p>生产企业天津尚美化妆品有限公司，中草药成分从工厂自有研发体系提取，没有中间商溢价。<strong>工厂直供，价格打下来的。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">临门收单</div>
+    <p>皮肤不吸收的、想提亮的、敏感刷酸后修护的——这款都能做到。双发酵导入 + 烟酰胺提亮 + 中草药修护，配方逻辑清晰。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- FAQ -->
+<div class="sec" id="faq">
+  <div class="sec-eye">Part 07 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>精粹水和化妆水有什么区别？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">配方底层不同。普通化妆水第一位是水；这款第一位是乳酸杆菌发酵产物，第二位是二裂酵母发酵产物——双发酵底层渗透力更强，用完皮肤真的打开了，后续产品进得更深。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>烟酰胺浓度是多少？会不会致痘？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">烟酰胺位于成分表中段，属于有效功能性用量。关于致痘：烟酰胺本身不致痘，但部分用户对烟酸敏感（烟酰胺水解产物）可能出现短暂泛红。pH控制在合理范围内可以减少水解，配合这款的发酵液底层，吸收更快、在皮肤表面停留时间更短，刺激感更小。敏感肌建议先局部测试。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>敏感肌可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">整体配方对敏感肌友好：积雪草、马齿苋、金盏花协同舒缓抗炎，防腐用1,2-己二醇比传统防腐剂温和，无香精。急性过敏期先就医；稳定期的敏感肌，刷酸后修复期，这款是合适的选择。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>用在哪个步骤？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">洁面后第一步，早晚都可以用。用完再叠精华、乳液、面霜。早上用完上底妆之前皮肤状态会更好；晚上用完叠精华，成分吸收效率提升。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和牡丹面膜、三抗精华一起用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">可以，而且推荐搭配。顺序：洁面→精粹水→（面膜或）精华→乳液/面霜。精粹水打开皮肤通道，面膜的成分进得更深，精华的活性成分留得更久。不是重复步骤，是让整套护肤体系效果更好。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>木瓜蛋白酶会不会刺激皮肤？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">木瓜蛋白酶是温和的酶解类成分，和果酸刷酸不同——不是酸性环境的化学剥落，是酶解老废角质蛋白，刺激感极低。配合积雪草和马齿苋的抗炎成分，敏感肌也可以日常使用。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 使用示范 -->
+<div class="sec" id="usage">
+  <div class="sec-eye">Part 08 · 使用示范</div>
+  <p class="sec-title">标准用法<br>直播里边说边示范</p>
+  <div class="ulist">
+    <div class="ustep"><div class="ucirc">①</div><div class="ut"><strong>洁面后，第一步使用</strong>——皮肤刚洗完最干净，毛孔刚打开，吸收效率最高</div></div>
+    <div class="ustep"><div class="ucirc">②</div><div class="ut"><strong>取适量（约1元硬币大小）倒在掌心或化妆棉</strong>——化妆棉用湿敷效果更明显，可以敷5分钟</div></div>
+    <div class="ustep"><div class="ucirc">③</div><div class="ut"><strong>从内向外轻拍至吸收</strong>——不要搓，拍按帮助渗透，感觉皮肤"喝进去了"为止</div></div>
+    <div class="ustep"><div class="ucirc">④</div><div class="ut"><strong>30秒内叠后续步骤</strong>——皮肤刚打开，趁这个时间叠精华，吸收效率最高</div></div>
+    <div class="ustep"><div class="ucirc">⑤</div><div class="ut"><strong>湿敷进阶用法</strong>——用化妆棉湿敷5-10分钟，暗沉干皮姐妹每周2-3次，提亮补水效果翻倍</div></div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 记忆卡 -->
+<div class="sec" style="padding:36px var(--pad) 0">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="mem-card">
+    <div class="mem-head">进直播间前最后看一遍</div>
+    <div class="mem-item">
+      <div class="mn">1</div>
+      <div>
+        <div class="mt">这不是普通化妆水</div>
+        <div class="md">双发酵底层打底 + 放大后续所有步骤效果——精粹水的定位比化妆水高一级，说清楚这点客户才愿意买</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">2</div>
+      <div>
+        <div class="mt">两个必讲成分</div>
+        <div class="md">埃及蓝睡莲（话题性+溢价感）· 烟酰胺+发酵液（逻辑性+说服力）——这两个讲出来成分党粉丝会主动搜索验证，结果对你有利</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">3</div>
+      <div>
+        <div class="mt">连带机会</div>
+        <div class="md">已有牡丹面膜或三抗精华的客户——精粹水是放大器，让已有的产品发挥更大效果，这个逻辑说清楚连带率很高</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">LYMO 黎沫</div>
+  <div class="fn2">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=p+'%';
+});
+function toggleScene(h){
+  const b=h.nextElementSibling,t=h.querySelector('.stog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.stog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleScript(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scrb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleFaq(q){
+  const a=q.nextElementSibling,i=q.querySelector('.faq-i'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');i.classList.add('open');}
+}
+</script>
+</body>
+</html>

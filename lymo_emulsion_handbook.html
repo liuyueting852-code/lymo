@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黎沫凝时润肤精华乳 · 主播手册</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0e;--bg2:#1a1917;--bg3:#242220;
+  --gold:#c9a84c;--gold-l:#e8c96a;
+  --text:#e8e4dc;--mid:#aeaaa2;--dim:#72706c;--white:#f5f2ec;
+  --div:rgba(201,168,76,0.16);--pad:18px;
+}
+body{background:var(--bg);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:var(--text);font-size:15px;line-height:1.75;padding-bottom:60px}
+nav{position:sticky;top:0;z-index:99;background:var(--bg);border-bottom:1px solid var(--div);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:48px}
+.nav-brand{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.nav-links{display:flex;gap:0;list-style:none;padding:0;margin:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:11px;color:var(--dim);text-decoration:none;padding:6px 10px;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+#prog{position:fixed;top:48px;left:0;height:2px;background:var(--gold);width:0;z-index:98}
+.hero{padding:44px var(--pad) 36px;border-bottom:1px solid var(--div)}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:26px;font-weight:700;color:var(--white);line-height:1.25;margin:0 0 6px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin-bottom:20px}
+.hero-intro{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:22px}
+.hero-intro strong{color:var(--white)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.rc{background:var(--bg2);border:1px solid var(--div);border-radius:10px;padding:13px;display:flex;align-items:center;gap:10px}
+.ri{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rt{font-size:13px;color:var(--white);font-weight:500}
+.rs{font-size:10px;color:var(--dim)}
+.sec{padding:36px var(--pad) 0;border-top:1px solid var(--div)}
+.sec-eye{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin:0 0 18px}
+.sec-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:26px}
+.sec-end{height:36px}
+.step-wrap{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+.step:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:0;width:1px;background:var(--div)}
+.snum{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold)}
+.sr{flex:1;padding-top:4px}
+.stitle{font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px}
+.grasp{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:14px}
+.grasp-lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.grasp p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.ilist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ii{background:var(--bg3);border-radius:7px;padding:11px 13px}
+.in{font-size:13px;color:var(--gold-l);font-weight:500;margin-bottom:3px}
+.id{font-size:12px;color:var(--dim);line-height:1.6}
+.solves{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.st{font-size:11px;background:rgba(74,140,92,.1);border:1px solid rgba(74,140,92,.3);color:#7ec99a;padding:3px 10px;border-radius:20px}
+.ftag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:5px 9px;margin-top:8px}
+.fl{font-size:11px;color:var(--gold)}
+.fn{font-size:10px;color:var(--dim)}
+.sum-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:18px 16px;margin:8px 0 36px}
+.sum-card .sl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sum-card .sm{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.sum-card .ss{font-size:12px;color:var(--dim)}
+.scene-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.scene-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.sch{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.sch:hover{background:var(--bg3)}
+.sem{font-size:22px;flex-shrink:0}
+.sct{font-size:14px;color:var(--white);font-weight:500}
+.scs{font-size:11px;color:var(--dim);margin-top:2px}
+.stog{margin-left:auto;color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.stog.open{transform:rotate(45deg)}
+.scb{display:none;padding:0 16px 18px}
+.scb.open{display:block}
+.drows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.dr{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:7px;padding:10px 13px}
+.dl{font-size:13px;color:var(--mid)}
+.dn{font-size:13px;font-weight:700;color:var(--gold)}
+.dsrc{font-size:10px;color:var(--dim);margin-bottom:12px}
+.sscr{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:13px 14px}
+.ssd{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px}
+.sst{font-size:12px;color:var(--dim);border-left:2px solid var(--gold);padding-left:9px;line-height:1.6}
+.script-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.script-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.scrh{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;cursor:pointer;user-select:none}
+.scrh:hover{background:var(--bg3)}
+.scrhl{display:flex;align-items:center;gap:11px}
+.scrn{font-size:22px;color:var(--gold);opacity:.3;font-weight:700;min-width:28px;line-height:1}
+.scrht{font-size:14px;color:var(--white);font-weight:500}
+.scrhs{font-size:11px;color:var(--dim);margin-top:2px}
+.tog{width:20px;height:20px;border-radius:50%;border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:transform .3s;flex-shrink:0}
+.tog.open{transform:rotate(45deg)}
+.scrb{display:none;padding:0 16px 16px}
+.scrb.open{display:block}
+.scrbox{background:var(--bg3);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px;font-size:14px;color:var(--mid);line-height:2}
+.scrbox strong{color:var(--white)}
+.psc{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin-bottom:10px}
+.pscl{font-size:13px;color:var(--white);font-weight:500;margin-bottom:6px}
+.psc p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.psc strong{color:var(--white)}
+.hbc{background:var(--bg2);border-radius:10px;padding:18px;margin-bottom:12px}
+.hbcl{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.hbc p{font-size:14px;color:var(--mid);line-height:1.9;margin:0}
+.hbc strong{color:var(--white)}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.faq-item{background:var(--bg2);border-radius:10px;overflow:hidden}
+.faq-q{padding:14px 15px;font-size:14px;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q:hover{background:var(--bg3)}
+.faq-i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-i.open{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 15px 13px;font-size:13px;color:var(--mid);line-height:1.8;border-top:1px solid var(--bg3)}
+.faq-a.open{display:block;padding-top:11px}
+.ulist{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.ustep{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border-radius:9px;padding:13px}
+.ucirc{width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.ut{font-size:13px;color:var(--mid);line-height:1.7}
+.ut strong{color:var(--white)}
+.mem-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:24px 18px;margin-bottom:36px}
+.mem-head{font-size:12px;letter-spacing:.1em;color:var(--gold);text-align:center;margin-bottom:20px}
+.mem-item{display:flex;gap:13px;margin-bottom:16px}
+.mem-item:last-child{margin-bottom:0}
+.mn{font-size:20px;font-weight:700;color:var(--gold);line-height:1;min-width:24px}
+.mt{font-size:13px;color:var(--white);font-weight:500;margin-bottom:3px}
+.md{font-size:12px;color:var(--dim);line-height:1.6}
+.story{background:var(--bg2);border:1px solid var(--div);border-radius:12px;padding:22px 18px;margin-bottom:36px;position:relative;overflow:hidden}
+.story::before{content:"\201C";position:absolute;top:-14px;left:12px;font-size:90px;color:var(--gold);opacity:.05;line-height:1;pointer-events:none}
+.story p{font-size:14px;color:var(--mid);line-height:2;margin:0 0 10px;position:relative}
+.story p:last-child{margin:0}
+.story strong{color:var(--white)}
+.story .gold{color:var(--gold);font-weight:500}
+.star-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.sg{background:var(--bg3);border-radius:10px;padding:13px;display:flex;gap:12px}
+.sg-tag{font-size:10px;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:2px 7px;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:2px}
+.sg-name{font-size:13px;color:var(--gold-l);font-weight:600;margin-bottom:3px}
+.sg-desc{font-size:12px;color:var(--mid);line-height:1.6}
+.sg-talk{font-size:11px;color:var(--dim);border-left:2px solid rgba(201,168,76,.3);padding-left:8px;margin-top:6px;line-height:1.6;font-style:italic}
+/* 体系对比卡 */
+.system-card{background:var(--bg2);border-radius:12px;padding:18px;margin-bottom:20px}
+.sc-title{font-size:13px;color:var(--white);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sc-rows{display:flex;flex-direction:column;gap:6px}
+.sc-row{display:grid;grid-template-columns:80px 1fr 1fr;gap:8px;align-items:center}
+.sc-lbl{font-size:11px;color:var(--dim);text-align:right}
+.sc-cell{background:var(--bg3);border-radius:6px;padding:8px 11px;font-size:12px;color:var(--mid);line-height:1.5}
+.sc-cell.ours{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2)}
+.sc-cell strong{color:var(--white)}
+.sc-header{display:grid;grid-template-columns:80px 1fr 1fr;gap:8px;margin-bottom:4px}
+.sc-h{font-size:10px;color:var(--dim);letter-spacing:.06em;font-weight:600;padding:0 11px}
+footer{padding:28px var(--pad);text-align:center;border-top:1px solid var(--div)}
+.fb{font-size:14px;color:var(--gold);letter-spacing:.18em;margin-bottom:5px}
+.fn2{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#star">明星成分</a></li>
+    <li><a href="#system">产品体系</a></li>
+    <li><a href="#scenes">场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&amp;A</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>凝时润肤</em>精华乳</h1>
+  <div class="hero-sub">先读懂产品，再开口讲产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    精华乳是护肤最后一道锁水墙。<br>
+    银耳多糖 + β-葡聚糖双多糖体系，配合积雪草、丹参中草药修护——<br>
+    <strong>补进去的水分锁住，修护成分留得更久，皮肤第二天早上软嫩的状态来自这里。</strong>
+  </p>
+  <div class="result-grid">
+    <div class="rc"><div class="ri">🌊</div><div><div class="rt">双多糖锁水</div><div class="rs">银耳 · β-葡聚糖</div></div></div>
+    <div class="rc"><div class="ri">🌿</div><div><div class="rt">中草药修护</div><div class="rs">积雪草 · 丹参 · 金盏花</div></div></div>
+    <div class="rc"><div class="ri">🛡</div><div><div class="rt">屏障稳固</div><div class="rs">牛油果脂 · 尿囊素</div></div></div>
+    <div class="rc"><div class="ri">🌸</div><div><div class="rt">埃及蓝睡莲</div><div class="rs">品牌系列记忆锚点</div></div></div>
+  </div>
+  <p style="font-size:12px;color:var(--dim)">↓ 向下读，搞懂这四件事的成分依据</p>
+</div>
+
+<!-- 配方逻辑 -->
+<div class="sec" id="logic">
+  <div class="sec-eye">Part 01 · 配方逻辑</div>
+  <p class="sec-title">先搞懂<br>这款精华乳</p>
+  <p class="sec-desc">精华乳在护肤步骤里负责两件事：锁住前面补进去的水分，同时让修护成分慢慢渗透留在皮肤里。这款的逻辑是：双多糖锁水 + 中草药修护 + 屏障稳固，三层同时作用。</p>
+
+  <div class="step-wrap">
+
+    <div class="step">
+      <div class="snum">一</div>
+      <div class="sr">
+        <div class="stitle">双多糖锁水体系，水分留得住</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>很多乳液的锁水靠的是硅油膜——涂上去滑，但实际上是物理封层，皮肤自身的保水能力没有提升。这款用银耳多糖和β-葡聚糖——两个天然多糖，和皮肤自身的保湿机制接近，帮皮肤真正留住水分而不是"罩住水分"。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">银耳（TREMELLA FUCIFORMIS）子实体提取物</div><div class="id">银耳多糖分子量和透明质酸接近，保湿能力被称为"天然植物玻尿酸"，成分党认知度高，消费者有认知且容易接受。从食材到护肤，话题性强</div></div>
+          <div class="ii"><div class="in">β-葡聚糖</div><div class="id">来自酵母细胞壁，保湿同时激活皮肤免疫修护，促进胶原合成。在高端护肤品里是溢价成分，放在精华乳里是真实诚意</div></div>
+          <div class="ii"><div class="in">乳酸杆菌发酵产物 ← 第一位</div><div class="id">和精粹水同源，发酵液打底帮助后续保湿成分更好渗透，锁水效率更高</div></div>
+          <div class="ii"><div class="in">甘油 + 丁二醇</div><div class="id">经典保湿基础，和双多糖协同，表层到深层全覆盖</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 水分锁住不蒸发</span><span class="st">✓ 第二天早上不干不紧</span><span class="st">✓ 天然多糖胜过硅油膜</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">二</div>
+      <div class="sr">
+        <div class="stitle">中草药修护矩阵，和精粹水呼应</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>精粹水和精华乳用了同一套中草药成分——积雪草、丹参、金盏花、马齿苋。精粹水是快速导入，精华乳是慢慢渗透持续修护。同一套中草药，两个产品解决两个时间维度，这是黎沫系列的配方设计逻辑。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">积雪草叶提取物</div><div class="id">积雪草苷促进胶原合成，修护受损屏障。精华乳剂型让积雪草停留时间更长，修护效果比精粹水更持久</div></div>
+          <div class="ii"><div class="in">丹参（SALVIA MILTIORRHIZA）提取物</div><div class="id">丹参酮抗氧化 + 促进皮肤微循环，改善暗沉发灰。乳霜剂型封锁后渗透更深，效果积累更明显</div></div>
+          <div class="ii"><div class="in">金盏花花提取物 + 马齿苋提取物</div><div class="id">协同抗炎舒缓，敏感泛红的皮肤日常维稳首选</div></div>
+          <div class="ii"><div class="in">尿囊素</div><div class="id">和牡丹面膜同款成分，促进细胞更新同时舒缓刺激感，敏感肌放心用</div></div>
+        </div>
+        <div class="ftag"><span style="font-size:12px">🌿</span><div><div class="fl">中草药修护：积雪草 · 丹参 · 金盏花 · 马齿苋</div><div class="fn">精粹水同款中草药矩阵 · 系列协同效果</div></div></div>
+        <div class="solves"><span class="st">✓ 持续修护</span><span class="st">✓ 舒缓泛红</span><span class="st">✓ 改善暗沉</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">三</div>
+      <div class="sr">
+        <div class="stitle">屏障稳固 + 肤感清爽不油腻</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>精华乳最怕两个问题：太厚重油腻、不够滋润。这款用辛酸/癸酸甘油三酯做轻薄酯类油脂基底，牛油果脂做锁水，聚二甲基硅氧烷改善涂抹肤感——不是靠堆油脂滋润，是靠正确的成分组合做到"滋润但轻盈"。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">辛酸/癸酸甘油三酯</div><div class="id">天然椰子油来源的轻薄酯类油脂，渗透快、肤感清爽，是"不腻"的关键。相比矿物油和普通植物油明显更轻盈</div></div>
+          <div class="ii"><div class="in">牛油果树果脂</div><div class="id">天然脂肪酸接近皮肤自身脂质，在皮肤表面形成轻薄防水层锁住水分，干皮秋冬用效果最明显</div></div>
+          <div class="ii"><div class="in">聚二甲基硅氧烷</div><div class="id">改善涂抹手感顺滑，帮助乳霜均匀推开，不是功效成分但让使用体验完整</div></div>
+          <div class="ii"><div class="in">埃及蓝睡莲花提取物</div><div class="id">和精粹水共用，品牌系列记忆锚点。富含黄酮类抗氧化物，协同修护同时提供溢价感</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 滋润不油腻</span><span class="st">✓ 屏障轻薄防护</span><span class="st">✓ 干皮敏感肌都适合</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sum-card">
+    <div class="sl">一句话记住</div>
+    <div class="sm">银耳+β-葡聚糖锁水 · 中草药持续修护 · 轻薄不油腻</div>
+    <div class="ss">精华乳是护肤最后一步——补进去的水分靠它留住，修护成分靠它慢慢工作</div>
+  </div>
+</div>
+
+<!-- 明星成分 -->
+<div class="sec" id="star">
+  <div class="sec-eye">Part 02 · 明星成分</div>
+  <p class="sec-title">三个成分<br>单独拎出来讲</p>
+
+  <div class="star-grid">
+    <div class="sg">
+      <div class="sg-tag">话题最强</div>
+      <div>
+        <div class="sg-name">银耳子实体提取物</div>
+        <div class="sg-desc">银耳多糖的保湿能力对标透明质酸，被称为"天然植物玻尿酸"。分子量可以根据提取工艺调节，小分子渗透深、大分子锁水效果好。银耳从食材到护肤的故事自带传播力——消费者对银耳有天然好感，成分党验证后也认可。近几年国货护肤里银耳成分热度持续上升，搜索流量好。</div>
+        <div class="sg-talk">直播间：「这款有银耳提取物——就是我们喝的银耳汤里的那个银耳。银耳多糖保湿能力和透明质酸一个级别，从餐桌到脸上，古老智慧有科学依据。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">高端成分</div>
+      <div>
+        <div class="sg-name">β-葡聚糖</div>
+        <div class="sg-desc">来自酵母细胞壁的天然多糖，三重功效：保湿（吸水能力强）、激活皮肤免疫细胞（促进自然修护）、促进成纤维细胞合成胶原蛋白。在高端修护产品里是标配，出现在精华乳里有真实溢价感。和银耳多糖组合形成双多糖保湿体系，是这款区别于普通乳液的核心配方亮点。</div>
+        <div class="sg-talk">直播间：「β-葡聚糖——不只是保湿，还激活皮肤自身的修护能力。普通乳液给皮肤锁水，这款额外让皮肤自己修复——两件事同时做。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">系列锚点</div>
+      <div>
+        <div class="sg-name">埃及蓝睡莲花提取物</div>
+        <div class="sg-desc">黎沫精粹水和精华乳的共同成分——在两款产品里都出现，是品牌系列感的视觉和成分锚点。精粹水用的是花水形式（活性更完整），精华乳用的是提取物形式（浓度更集中），两种形式互补。向已经用过精粹水的客户推精华乳时，"同款埃及蓝睡莲"是最自然的连带话术。</div>
+        <div class="sg-talk">直播间：「用过精粹水的姐妹应该记得埃及蓝睡莲——精华乳里也有，这是黎沫这条护肤线的成分记忆点，两款配合用效果叠加。」</div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 产品体系 -->
+<div class="sec" id="system">
+  <div class="sec-eye">Part 03 · 黎沫产品体系</div>
+  <p class="sec-title">三款产品<br>怎么配合用</p>
+  <p class="sec-desc">精粹水、精华乳、牡丹面膜是一套完整体系，每款各有分工。说清楚分工，连带销售自然成立。</p>
+
+  <div class="system-card">
+    <div class="sc-title">📋 三款分工一览</div>
+    <div class="sc-header">
+      <div class="sc-h"></div>
+      <div class="sc-h">负责什么</div>
+      <div class="sc-h">最适合时机</div>
+    </div>
+    <div class="sc-rows">
+      <div class="sc-row">
+        <div class="sc-lbl">精粹水</div>
+        <div class="sc-cell ours"><strong>打开皮肤通道</strong>，发酵液导入，放大后续步骤效果</div>
+        <div class="sc-cell">每天早晚第一步，洁面后立即用</div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-lbl">牡丹面膜</div>
+        <div class="sc-cell ours"><strong>集中补给</strong>，短时间高浓度，今天的即时状态</div>
+        <div class="sc-cell">每周2-3次，精粹水后、精华乳前</div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-lbl">精华乳</div>
+        <div class="sc-cell ours"><strong>锁水修护</strong>，慢慢渗透，守护长期底子</div>
+        <div class="sc-cell">每天早晚最后一步，精粹水后叠用</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grasp" style="margin-bottom:20px">
+    <div class="grasp-lbl">连带话术逻辑</div>
+    <p>精粹水打开通道 → 精华乳锁水修护——两款是"上下游"关系，不是重复投资。用了精粹水不用精华乳，水分蒸发，前面的步骤浪费一半；用了精华乳不用精粹水，精华乳渗透效率打折。<strong>两款一起用，才是完整的一套。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 销售场景 -->
+<div class="sec" id="scenes">
+  <div class="sec-eye">Part 04 · 销售场景</div>
+  <p class="sec-title">什么人<br>最需要这款</p>
+
+  <div class="scene-cards">
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌊</div>
+        <div><div class="sct">皮肤补水了还是干 · 水分留不住</div><div class="scs">弹幕：「敷完面膜还是干」「涂了乳液还是干」「保湿效果不持久」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">主力场景 · 转化最快</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">锁水核心</div><div class="dn">银耳 + β-葡聚糖</div></div>
+          <div class="dr"><div class="dl">油脂封层</div><div class="dn">牛油果脂 + 辛酸酯</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「补水之后水分蒸发——是因为只补水没锁水。这款银耳多糖 + β-葡聚糖双多糖锁水，不是靠硅油膜物理封层，是让皮肤真的把水留住。牛油果脂再在表面形成轻薄防水层。用了精粹水之后马上用这款，补进去的水分才真的留得住，第二天早上皮肤摸起来还是软的。」</div>
+          <div class="sst">话术：「补水是精粹水的事，锁水是精华乳的事——两个都做到，皮肤才真的喝饱」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌿</div>
+        <div><div class="sct">敏感肌 · 换季 · 皮肤总出状况</div><div class="scs">弹幕：「敏感肌」「换季皮肤薄」「泛红」「屏障需要修护」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">敏感肌精准场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">修护成分</div><div class="dn">积雪草 + 尿囊素</div></div>
+          <div class="dr"><div class="dl">抗炎协同</div><div class="dn">金盏花 + 马齿苋</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「敏感肌最需要的乳液：成分温和，但修护效果够用。这款积雪草修护屏障，尿囊素舒缓刺激，金盏花和马齿苋协同抗炎——防腐用1,2-己二醇，比传统防腐剂温和。精华乳剂型让修护成分停留时间更长，不是涂完就挥发掉的那种。」</div>
+          <div class="sst">话术：「敏感肌用精华乳，成分温和是底线，修护够用是要求——这款两个都做到了」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🕯</div>
+        <div><div class="sct">干皮 · 秋冬换季 · 皮肤紧绷</div><div class="scs">弹幕：「干皮」「秋冬皮肤紧绷」「需要滋润」「乳液不够用」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">干皮滋润场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">油脂体系</div><div class="dn">牛油果脂 + 辛酸酯</div></div>
+          <div class="dr"><div class="dl">肤感</div><div class="dn">滋润不油腻</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「干皮觉得乳液不够用——通常是因为乳液里油脂比例太低，或者油脂类型不对。这款牛油果脂提供天然油脂滋养，辛酸/癸酸甘油三酯让质地轻薄不腻，银耳多糖从内部锁水。干皮秋冬用，涂完皮肤有被"包裹住"的感觉，不是那种浮在表面的滑感。」</div>
+          <div class="sst">话术：「干皮需要的滋润感，这款做到了，而且不油腻」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🛍</div>
+        <div><div class="sct">已买精粹水或牡丹面膜 · 连带购买</div><div class="scs">弹幕：「我有精粹水」「我有面膜」「能一起用吗」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">连带销售 · 体系完整性</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">精粹水</div><div class="dn">打开 · 导入</div></div>
+          <div class="dr"><div class="dl">精华乳</div><div class="dn">锁住 · 修护</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「已经有精粹水的姐妹——精粹水打开皮肤通道，精华乳是下一步，把打开的通道里补进去的水分锁住，让修护成分慢慢工作。两款共用积雪草、丹参、埃及蓝睡莲，配方有协同逻辑，不是随便两瓶凑在一起。」</div>
+          <div class="sst">话术：「精粹水管今天的导入，精华乳管长期的修护——一套完整的才叫护肤体系」</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 话术 -->
+<div class="sec" id="scripts">
+  <div class="sec-eye">Part 05 · 直播话术</div>
+  <p class="sec-title">四个角度<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px">说问题 → 说原因 → 说这款怎么解决</p>
+
+  <div class="script-cards">
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">01</div><div><div class="scrht">银耳为什么能保湿，不只是噱头吗</div><div class="scrhs">开场必讲 · 建立成分信任</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        银耳护肤——很多人以为是凑热点，实际上银耳多糖作为保湿成分有明确的科学依据。<br><br>
+        银耳多糖的保湿机理和透明质酸类似：吸水能力强，能在皮肤表面和角质层内形成保水膜，锁住皮肤水分不蒸发。分子结构上和玻尿酸有相似之处，但来源是天然植物，对成分党和天然护肤爱好者都有吸引力。<br><br>
+        <strong>这款把银耳提取物和β-葡聚糖组合——银耳负责吸水锁水，β-葡聚糖激活皮肤免疫修护，双多糖协同，是普通乳液用单一保湿剂做不到的层次。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">02</div><div><div class="scrht">精华乳和精华、面霜有什么区别</div><div class="scrhs">产品认知 · 帮用户找到自己的位置</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        护肤步骤里，精华乳是精华和面霜之间的产品——比精华厚，比面霜轻。<br><br>
+        精华：活性成分浓度高，主要功效导向，肤感偏水感，停留时间短。精华乳：活性成分 + 油脂 + 保湿成分综合，兼顾功效和锁水，停留时间更长。面霜：油脂比例更高，主要封层，秋冬干皮首选。<br><br>
+        <strong>这款适合正常肤质日常护肤、干皮春秋季、敏感肌全年——不够厚重，但修护和锁水都到位。觉得面霜太厚腻、纯精华又不够滋润的姐妹，精华乳是最合适的选择。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">03</div><div><div class="scrht">为什么精粹水之后要用精华乳</div><div class="scrhs">连带销售逻辑 · 体系化思维</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        精粹水打开皮肤之后，皮肤处于"通道开放"的状态——吸收效率高，但水分蒸发也快。<br><br>
+        这时候如果不跟精华乳，补进去的水分和精粹水里的成分会随着皮肤呼吸慢慢散掉。精华乳就是在皮肤通道还开着的时候，快速补充修护成分 + 在表面形成轻薄封层，让前面所有步骤的成分锁在里面慢慢工作。<br><br>
+        <strong>两款共用积雪草、丹参、埃及蓝睡莲这些中草药成分——不是碰巧，是系列设计逻辑：同一套修护成分，精粹水快速导入，精华乳长期留驻，双重保障。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">04</div><div><div class="scrht">有硅油，敏感肌能用吗</div><div class="scrhs">解除顾虑 · 扩大客群</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        成分表里有聚二甲基硅氧烷（硅油）——一些成分党粉丝会有顾虑。<br><br>
+        硅油本身是惰性成分，不被皮肤吸收，主要作用是改善涂抹肤感，让乳霜推开顺滑不搓泥。硅油不致粉刺、不堵毛孔，敏感肌使用没有问题——这是皮肤科学的共识，不是争议话题。<br><br>
+        <strong>这款配方对敏感肌友好的核心不在有没有硅油，而在：防腐用1,2-己二醇温和体系、积雪草和尿囊素舒缓修护、马齿苋和金盏花协同抗炎。这些才是敏感肌应该关注的地方。</strong>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 品牌故事 -->
+<div class="sec">
+  <div class="sec-eye">Part 06 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>黎沫的精粹水和精华乳同一天备案——这不是巧合，是设计好的。</p>
+    <p>两款产品共用积雪草、丹参、金盏花、马齿苋、埃及蓝睡莲，<strong>不是两个独立产品凑在一起卖，是从配方设计阶段就按"一套护肤体系"规划的</strong>。</p>
+    <p>中草药成分背后，是工厂旗下专门研究传统中草药现代提取工艺的研发体系，不是采购市场买来的通用原料。</p>
+    <p class="gold">做黎沫只有一个标准：自己家人敢用、消费者买得起的配方。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 逼单 -->
+<div class="sec" id="push">
+  <div class="sec-eye">Part 07 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px">根据弹幕情况选场景，再接通用话术收单。</p>
+
+  <div class="psc"><div class="pscl">🌊 补水留不住/水分蒸发快的姐妹</div><p>银耳多糖 + β-葡聚糖双多糖锁水，配合牛油果脂封层，补进去的水分真的留得住。<strong>今晚用了，明天早上皮肤还是软的。</strong></p></div>
+  <div class="psc"><div class="pscl">🌿 敏感肌/换季皮肤不稳的姐妹</div><p>积雪草修护 + 尿囊素舒缓 + 马齿苋金盏花抗炎，温和防腐体系。<strong>敏感肌日常用，屏障越用越稳。</strong></p></div>
+  <div class="psc"><div class="pscl">🕯 干皮觉得乳液不够滋润的姐妹</div><p>牛油果脂 + 辛酸酯轻薄油脂，银耳多糖深层锁水，滋润有了，油腻没有。<strong>秋冬干皮必备，比面霜轻，比普通乳液有效。</strong></p></div>
+  <div class="psc"><div class="pscl">🛍 已有精粹水的姐妹</div><p>精粹水打开通道，精华乳锁住修护——两款共用积雪草、丹参、埃及蓝睡莲，不是凑在一起，是一套设计好的体系。<strong>单用精粹水只做到了一半，加上精华乳才完整。</strong></p></div>
+
+  <div class="hbc" style="margin-top:18px">
+    <div class="hbcl">价值锚定</div>
+    <p>银耳多糖 + β-葡聚糖双多糖（普通乳液没有）、积雪草 + 丹参 + 金盏花中草药修护矩阵、埃及蓝睡莲系列成分锚点——配方诚意在成分表里，看得见。<strong>今天直播间最低价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">工厂直供背书</div>
+    <p>生产企业天津尚美化妆品有限公司，和精粹水同批备案，中草药成分同源工厂研发体系。<strong>工厂直供，没有中间商溢价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">临门收单</div>
+    <p>锁水的、修护的、干皮秋冬需要滋润的——这款都能做到。银耳双多糖锁水 + 中草药修护，配合精粹水是完整的一套。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- FAQ -->
+<div class="sec" id="faq">
+  <div class="sec-eye">Part 08 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>精华乳和乳液有什么区别？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">精华乳比普通乳液多了活性功效成分——这款有积雪草、银耳多糖、β-葡聚糖、丹参这些修护功效成分，普通乳液主要是保湿和改善肤感。精华乳兼顾功效和滋润，介于精华和面霜之间，正常肤质日常用最合适。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>有硅油，会堵毛孔吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">硅油（聚二甲基硅氧烷）是惰性成分，不被皮肤吸收，不堵毛孔，不致粉刺。皮肤科学对硅油的安全性有充分研究，这是行业共识。这款里硅油的作用是改善涂抹肤感顺滑，敏感肌用没有问题。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>敏感肌可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">可以，整体配方对敏感肌友好。积雪草修护屏障，尿囊素舒缓刺激，马齿苋和金盏花协同抗炎，防腐用1,2-己二醇。急性过敏期先就医；稳定期的敏感肌，这款日常维稳用合适。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和精粹水一起用吗？顺序是什么？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">推荐一起用。顺序：洁面→精粹水→（面膜可选）→精华乳。精粹水打开皮肤通道，精华乳紧接着锁水修护，30秒内叠用效果最好。两款共用中草药成分，配合使用有协同效果。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>干皮够用吗？还需要再叠面霜吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">正常干皮春秋季用精华乳通常够用；极干皮或者北方冬天，可以在精华乳后叠薄薄一层面霜加强封锁。这款有牛油果脂做油脂锁水，比普通乳液的封锁效果明显更好，大多数干皮单用够用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>油皮可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">夏天油皮建议跳过精华乳，直接精粹水+防晒。秋冬皮肤变干的时候可以少量薄涂T区以外的位置。辛酸/癸酸甘油三酯是轻薄酯类油脂，比普通乳液更轻盈，但整体还是偏滋润，油皮日常不是首选。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 使用示范 -->
+<div class="sec">
+  <div class="sec-eye">Part 09 · 使用示范</div>
+  <p class="sec-title">标准用法<br>直播里边涂边讲</p>
+  <div class="ulist">
+    <div class="ustep"><div class="ucirc">①</div><div class="ut"><strong>精粹水之后、30秒内使用</strong>——皮肤通道还开着，这时候叠精华乳渗透效率最高</div></div>
+    <div class="ustep"><div class="ucirc">②</div><div class="ut"><strong>取黄豆大小</strong>——精华乳浓度高，不需要多，薄涂均匀就够</div></div>
+    <div class="ustep"><div class="ucirc">③</div><div class="ut"><strong>指腹点涂全脸，由内向外轻推</strong>——不要搓，轻推感觉皮肤"吃进去"为止</div></div>
+    <div class="ustep"><div class="ucirc">④</div><div class="ut"><strong>眼周多用一点</strong>——眼周皮肤最薄、最容易干，精华乳可以用在眼周</div></div>
+    <div class="ustep"><div class="ucirc">⑤</div><div class="ut"><strong>早晚都可以用</strong>——早上用完叠防晒，晚上用完让皮肤整夜修护</div></div>
+  </div>
+</div>
+
+<!-- 记忆卡 -->
+<div class="sec" style="padding:36px var(--pad) 0">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="mem-card">
+    <div class="mem-head">进直播间前最后看一遍</div>
+    <div class="mem-item">
+      <div class="mn">1</div>
+      <div>
+        <div class="mt">两个必讲成分</div>
+        <div class="md">银耳多糖（"天然植物玻尿酸"，消费者有认知）· β-葡聚糖（高端修护成分，激活皮肤自修护）——这两个是这款区别于普通乳液的核心</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">2</div>
+      <div>
+        <div class="mt">一个系列连带逻辑</div>
+        <div class="md">精粹水打开导入，精华乳锁水修护——两款共用中草药成分，不是随便两瓶，是一套设计好的体系。说清楚这个，连带率很高</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">3</div>
+      <div>
+        <div class="mt">一个记忆锚点</div>
+        <div class="md">埃及蓝睡莲——精粹水和精华乳共有，是黎沫这条护肤线的品牌成分记忆点。已买精粹水的客户看到这个，连带购买最自然</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">LYMO 黎沫</div>
+  <div class="fn2">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=p+'%';
+});
+function toggleScene(h){
+  const b=h.nextElementSibling,t=h.querySelector('.stog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.stog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleScript(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scrb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleFaq(q){
+  const a=q.nextElementSibling,i=q.querySelector('.faq-i'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');i.classList.add('open');}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黎沫胶原抗皱精华霜 · 主播手册</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0e;--bg2:#1a1917;--bg3:#242220;
+  --gold:#c9a84c;--gold-l:#e8c96a;
+  --text:#e8e4dc;--mid:#aeaaa2;--dim:#72706c;--white:#f5f2ec;
+  --div:rgba(201,168,76,0.16);--pad:18px;
+}
+body{background:var(--bg);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:var(--text);font-size:15px;line-height:1.75;padding-bottom:60px}
+nav{position:sticky;top:0;z-index:99;background:var(--bg);border-bottom:1px solid var(--div);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:48px}
+.nav-brand{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.nav-links{display:flex;list-style:none;padding:0;margin:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:11px;color:var(--dim);text-decoration:none;padding:6px 10px;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+#prog{position:fixed;top:48px;left:0;height:2px;background:var(--gold);width:0;z-index:98}
+.hero{padding:44px var(--pad) 36px;border-bottom:1px solid var(--div)}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:26px;font-weight:700;color:var(--white);line-height:1.25;margin:0 0 6px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin-bottom:20px}
+.hero-intro{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:22px}
+.hero-intro strong{color:var(--white)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.rc{background:var(--bg2);border:1px solid var(--div);border-radius:10px;padding:13px;display:flex;align-items:center;gap:10px}
+.ri{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rt{font-size:13px;color:var(--white);font-weight:500}
+.rs{font-size:10px;color:var(--dim)}
+.sec{padding:36px var(--pad) 0;border-top:1px solid var(--div)}
+.sec-eye{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin:0 0 18px}
+.sec-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:26px}
+.sec-end{height:36px}
+.dual-data{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.data-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:16px}
+.data-eye{font-size:10px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.data-num{font-size:30px;font-weight:700;color:var(--gold-l);line-height:1;margin-bottom:4px}
+.data-sig{font-size:11px;color:#7ec99a;margin-left:4px}
+.data-label{font-size:11px;color:var(--mid);margin-bottom:8px}
+.data-method{font-size:10px;color:var(--dim);line-height:1.5}
+.data-note{background:var(--bg2);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.data-note p{font-size:13px;color:var(--mid);line-height:1.8}
+.data-note strong{color:var(--white)}
+.data-tip{font-size:12px;color:var(--gold);border-left:2px solid var(--gold);padding-left:9px;margin-top:10px;line-height:1.6}
+.step-wrap{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+.step:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:0;width:1px;background:var(--div)}
+.snum{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold)}
+.sr{flex:1;padding-top:4px}
+.stitle{font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px}
+.grasp{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:14px}
+.grasp-lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.grasp p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.ilist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ii{background:var(--bg3);border-radius:7px;padding:11px 13px}
+.in{font-size:13px;color:var(--gold-l);font-weight:500;margin-bottom:3px}
+.id{font-size:12px;color:var(--dim);line-height:1.6}
+.solves{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.st{font-size:11px;background:rgba(74,140,92,.1);border:1px solid rgba(74,140,92,.3);color:#7ec99a;padding:3px 10px;border-radius:20px}
+.ftag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:5px 9px;margin-top:8px}
+.fl{font-size:11px;color:var(--gold)}
+.fn{font-size:10px;color:var(--dim)}
+.sum-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:18px 16px;margin:8px 0 36px}
+.sum-card .sl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sum-card .sm{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.sum-card .ss{font-size:12px;color:var(--dim)}
+.star-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.sg{background:var(--bg3);border-radius:10px;padding:13px;display:flex;gap:12px}
+.sg-tag{font-size:10px;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:2px 7px;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:2px}
+.sg-name{font-size:13px;color:var(--gold-l);font-weight:600;margin-bottom:3px}
+.sg-desc{font-size:12px;color:var(--mid);line-height:1.6}
+.sg-talk{font-size:11px;color:var(--dim);border-left:2px solid rgba(201,168,76,.3);padding-left:8px;margin-top:6px;line-height:1.6;font-style:italic}
+.sys-card{background:var(--bg2);border-radius:12px;padding:16px;margin-bottom:12px}
+.sys-rows{display:flex;flex-direction:column;gap:5px}
+.sys-row{display:grid;grid-template-columns:72px 1fr auto;gap:8px;align-items:center;background:var(--bg3);border-radius:7px;padding:9px 12px}
+.sys-lbl{font-size:11px;color:var(--dim)}
+.sys-role{font-size:12px;color:var(--mid)}
+.sys-tag{font-size:10px;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.sys-tag.active{background:rgba(201,168,76,.15);color:var(--gold-l)}
+.sys-header{display:grid;grid-template-columns:72px 1fr auto;gap:8px;padding:0 12px;margin-bottom:4px}
+.sys-h{font-size:10px;color:var(--dim);letter-spacing:.06em;font-weight:600}
+.scene-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.scene-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.sch{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.sch:hover{background:var(--bg3)}
+.sem{font-size:22px;flex-shrink:0}
+.sct{font-size:14px;color:var(--white);font-weight:500}
+.scs{font-size:11px;color:var(--dim);margin-top:2px}
+.stog{margin-left:auto;color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.stog.open{transform:rotate(45deg)}
+.scb{display:none;padding:0 16px 18px}
+.scb.open{display:block}
+.drows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.dr{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:7px;padding:10px 13px}
+.dl{font-size:13px;color:var(--mid)}
+.dn{font-size:13px;font-weight:700;color:var(--gold)}
+.sscr{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:13px 14px}
+.ssd{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px}
+.sst{font-size:12px;color:var(--dim);border-left:2px solid var(--gold);padding-left:9px;line-height:1.6}
+.script-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.script-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.scrh{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;cursor:pointer;user-select:none}
+.scrh:hover{background:var(--bg3)}
+.scrhl{display:flex;align-items:center;gap:11px}
+.scrn{font-size:22px;color:var(--gold);opacity:.3;font-weight:700;min-width:28px;line-height:1}
+.scrht{font-size:14px;color:var(--white);font-weight:500}
+.scrhs{font-size:11px;color:var(--dim);margin-top:2px}
+.tog{width:20px;height:20px;border-radius:50%;border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:transform .3s;flex-shrink:0}
+.tog.open{transform:rotate(45deg)}
+.scrb{display:none;padding:0 16px 16px}
+.scrb.open{display:block}
+.scrbox{background:var(--bg3);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px;font-size:14px;color:var(--mid);line-height:2}
+.scrbox strong{color:var(--white)}
+.psc{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin-bottom:10px}
+.pscl{font-size:13px;color:var(--white);font-weight:500;margin-bottom:6px}
+.psc p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.psc strong{color:var(--white)}
+.hbc{background:var(--bg2);border-radius:10px;padding:18px;margin-bottom:12px}
+.hbcl{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.hbc p{font-size:14px;color:var(--mid);line-height:1.9;margin:0}
+.hbc strong{color:var(--white)}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.faq-item{background:var(--bg2);border-radius:10px;overflow:hidden}
+.faq-q{padding:14px 15px;font-size:14px;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q:hover{background:var(--bg3)}
+.faq-i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-i.open{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 15px 13px;font-size:13px;color:var(--mid);line-height:1.8;border-top:1px solid var(--bg3)}
+.faq-a.open{display:block;padding-top:11px}
+.ulist{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.ustep{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border-radius:9px;padding:13px}
+.ucirc{width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.ut{font-size:13px;color:var(--mid);line-height:1.7}
+.ut strong{color:var(--white)}
+.mem-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:24px 18px;margin-bottom:36px}
+.mem-head{font-size:12px;letter-spacing:.1em;color:var(--gold);text-align:center;margin-bottom:20px}
+.mem-item{display:flex;gap:13px;margin-bottom:16px}
+.mem-item:last-child{margin-bottom:0}
+.mn{font-size:20px;font-weight:700;color:var(--gold);line-height:1;min-width:24px}
+.mt{font-size:13px;color:var(--white);font-weight:500;margin-bottom:3px}
+.md{font-size:12px;color:var(--dim);line-height:1.6}
+.story{background:var(--bg2);border:1px solid var(--div);border-radius:12px;padding:22px 18px;margin-bottom:36px;position:relative;overflow:hidden}
+.story p{font-size:14px;color:var(--mid);line-height:2;margin:0 0 10px;position:relative}
+.story p:last-child{margin:0}
+.story strong{color:var(--white)}
+.story .gold{color:var(--gold);font-weight:500}
+footer{padding:28px var(--pad);text-align:center;border-top:1px solid var(--div)}
+.fb{font-size:14px;color:var(--gold);letter-spacing:.18em;margin-bottom:5px}
+.fn2{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#data">双检测报告</a></li>
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#star">明星成分</a></li>
+    <li><a href="#system">产品体系</a></li>
+    <li><a href="#scenes">场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&amp;A</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>胶原抗皱</em>精华霜</h1>
+  <div class="hero-sub">黎沫系列目前唯一同时拥有两份第三方检测报告的产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    这款精华霜有两个杀手锏：<br>
+    <strong>一是双报告——舒缓 + 紧致抗皱，两项功效都经过第三方实验室验证。</strong><br>
+    <strong>二是藏红花——历史上比黄金还贵的植物，出现在这个价位的面霜里。</strong><br>
+    霜类剂型是黎沫系列的封层产品，护肤最后一步，把所有成分锁住。
+  </p>
+  <div class="result-grid">
+    <div class="rc"><div class="ri">📋</div><div><div class="rt">双份检测报告</div><div class="rs">舒缓49.64% · 抗皱52.48%</div></div></div>
+    <div class="rc"><div class="ri">🌺</div><div><div class="rt">藏红花提取物</div><div class="rs">历史最贵植物 · 稀缺溢价</div></div></div>
+    <div class="rc"><div class="ri">🧴</div><div><div class="rt">水解胶原蛋白</div><div class="rs">产品名的来源 · 修护核心</div></div></div>
+    <div class="rc"><div class="ri">🔒</div><div><div class="rt">系列封层霜</div><div class="rs">锁住所有步骤成分</div></div></div>
+  </div>
+  <p style="font-size:12px;color:var(--dim)">↓ 先看双检测报告，这是这款最硬的武器</p>
+</div>
+
+<div class="sec" id="data">
+  <div class="sec-eye">Part 01 · 双份第三方检测报告</div>
+  <p class="sec-title">两项功效<br>都有数据背书</p>
+  <p class="sec-desc">黎沫系列里唯一同时做了舒缓和紧致抗皱两项检测的产品。两份报告同一家机构，同一批次样品，数据可信。</p>
+  <div class="dual-data">
+    <div class="data-card">
+      <div class="data-eye">舒缓功效 · 透明质酸酶抑制试验</div>
+      <div class="data-num">49.64%<span class="data-sig">**</span></div>
+      <div class="data-label">透明质酸酶活性抑制率</div>
+      <div class="data-method">报告编号：268GF01572025124684-JC-1<br>2025年04月03日 · 中检科（北京）</div>
+    </div>
+    <div class="data-card">
+      <div class="data-eye">紧致抗皱 · DPPH自由基清除实验</div>
+      <div class="data-num">52.48%<span class="data-sig">**</span></div>
+      <div class="data-label">DPPH自由基清除率</div>
+      <div class="data-method">报告编号：268GF01572025122365-JC<br>2025年04月03日 · 中检科（北京）</div>
+    </div>
+  </div>
+  <div class="data-note">
+    <p><strong>舒缓数据怎么讲：</strong>透明质酸酶是分解皮肤透明质酸的酶，也和过敏反应密切相关。抑制率49.64%（p&lt;0.01）意味着这款能显著抑制透明质酸酶活性——皮肤的透明质酸不容易被破坏，过敏炎症反应同时被抑制。红没药醇 + 灵芝 + 金银花协同做到的。</p>
+    <div class="data-tip">话术：「舒缓有没有效，看检测报告——49.64%抑制率，p值0.01，数字在那里。」</div>
+  </div>
+  <div class="data-note">
+    <p><strong>抗皱数据怎么讲：</strong>DPPH自由基清除率52.48%（p&lt;0.01），和松茸悬油精华的57.86%在同一量级。自由基过量导致胶原蛋白氧化降解，皮肤松弛起皱。清除自由基从源头阻断皱纹形成，这是黎沫抗老产品线的统一方向。</p>
+    <div class="data-tip">话术：「第三方中检科测的，报告编号268GF01572025122365-JC有据可查——数字不会骗人。」</div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<div class="sec" id="logic">
+  <div class="sec-eye">Part 02 · 配方逻辑</div>
+  <p class="sec-title">精华霜<br>三层配方结构</p>
+  <p class="sec-desc">霜类产品油脂比例更高，停留时间更长，适合护肤最后一步封层。配方逻辑：发酵底层渗透 → 胶原修护核心 → 中草药稀缺矩阵。</p>
+  <div class="step-wrap">
+    <div class="step">
+      <div class="snum">一</div>
+      <div class="sr">
+        <div class="stitle">双发酵底层 + 多重植物油脂</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>和黎沫系列其他产品一样，乳酸杆菌发酵产物排第一位——发酵液底层让霜体活性成分渗透效率更高。牛油果脂 + 角鲨烷 + 霍霍巴籽油三重植物油脂，干皮抹完有被"包裹住"但不油腻的感觉。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">乳酸杆菌发酵产物 + 酵母菌/大米发酵产物滤液</div><div class="id">黎沫系列贯穿成分，霜体里的发酵底层让活性成分渗透更深，而不是只停留在皮肤表面</div></div>
+          <div class="ii"><div class="in">牛油果树果脂 + 角鲨烷 + 霍霍巴籽油</div><div class="id">三重植物油脂分工：牛油果脂厚实锁水，角鲨烷轻薄渗透，霍霍巴调节皮脂平衡</div></div>
+          <div class="ii"><div class="in">向日葵籽油 + 沙棘果油</div><div class="id">向日葵富含亚油酸修护脂质屏障；沙棘富含维E和胡萝卜素，抗氧化协同</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 滋润不腻</span><span class="st">✓ 渗透效率高</span><span class="st">✓ 封层持久</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">二</div>
+      <div class="sr">
+        <div class="stitle">水解胶原 + 红没药醇 · 修护舒缓核心</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>"胶原抗皱"四个字的成分依据在这里：水解胶原蛋白是这款命名的来源；红没药醇是高端舒缓成分，两份检测报告里的舒缓数据有它的贡献。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">水解胶原（COLLAGEN）</div><div class="id">胶原蛋白水解后的小分子胶原肽，可以渗透皮肤，为皮肤细胞合成新胶原提供原料，同时有保湿和修护功效。产品名"胶原"就来自这里，不是名字加概念</div></div>
+          <div class="ii"><div class="in">红没药醇（BISABOLOL）</div><div class="id">从洋甘菊提取的顶级舒缓成分，抑制炎症介质释放，减少皮肤泛红。舒缓检测报告透明质酸酶抑制率49.64%，是核心贡献成分</div></div>
+          <div class="ii"><div class="in">尿囊素 + 泛醇（维生素B5）</div><div class="id">尿囊素促细胞更新舒缓刺激，泛醇锁水促渗透——和牡丹面膜共用这两个成分，黎沫系列修护体系的一致性</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 胶原修护</span><span class="st">✓ 舒缓有数据</span><span class="st">✓ 高端成分</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">三</div>
+      <div class="sr">
+        <div class="stitle">藏红花领衔 · 中草药稀缺矩阵</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>这款的中草药阵容是黎沫系列里最豪华的——藏红花、当归、松茸、灵芝、金银花、苦参、甘草、黄连、黄柏、山竹果皮，每一个都有具体功效，而藏红花是最有话题性的稀缺成分。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">番红花（藏红花）花提取物</div><div class="id">史称比黄金还贵的香料，每朵只有3根柱头可用，几万朵才能提取1克。护肤功效：藏红花素强效抗氧化 + 辅助提亮均匀肤色，出现在这个价位的霜里是真实的成本投入</div></div>
+          <div class="ii"><div class="in">当归（ANGELICA SINENSIS）提取物</div><div class="id">传统"补血圣药"，当归素促进皮肤微循环，改善气色暗沉，是真正"内调外用"的中药材</div></div>
+          <div class="ii"><div class="in">松口蘑（松茸）+ 赤芝（灵芝）提取物</div><div class="id">和松茸悬油精华共用双菌类成分，系列感强，协同抗氧化促细胞更新</div></div>
+          <div class="ii"><div class="in">忍冬（金银花）+ 黄葵（苦参）+ 甘草棕醇 + 倒捻子（山竹）果皮</div><div class="id">四重抗炎抗氧化协同——金银花清热，苦参抗菌，甘草棕醇温和美白辅助，山竹果皮强效抗氧，和红没药醇一起构建完整舒缓防线</div></div>
+        </div>
+        <div class="ftag"><span style="font-size:12px">🌿</span><div><div class="fl">藏红花·当归·松茸·灵芝·金银花·苦参·甘草·山竹</div><div class="fn">黎沫系列草本阵容最完整的一款</div></div></div>
+        <div class="solves"><span class="st">✓ 抗氧化</span><span class="st">✓ 改善气色</span><span class="st">✓ 抗炎舒缓</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="sum-card">
+    <div class="sl">一句话记住</div>
+    <div class="sm">双报告背书 · 胶原修护 · 藏红花稀缺中草药矩阵</div>
+    <div class="ss">黎沫系列功效最全面的产品，护肤最后一步封层，锁住所有前序步骤的成分</div>
+  </div>
+</div>
+
+<div class="sec" id="star">
+  <div class="sec-eye">Part 03 · 明星成分</div>
+  <p class="sec-title">四个成分<br>单独拎出来讲</p>
+  <div class="star-grid">
+    <div class="sg">
+      <div class="sg-tag">最稀缺</div>
+      <div>
+        <div class="sg-name">番红花（藏红花）花提取物</div>
+        <div class="sg-desc">历史上价格超过黄金。每朵番红花只有3根细长柱头，每克需要约1.5万朵花手工采摘。护肤功效：藏红花素强效抗氧化，同时辅助均匀肤色提亮气色。出现在面霜里是真实的原料成本，不是概念营销。</div>
+        <div class="sg-talk">直播间：「这款有藏红花——历史上比黄金还贵，不是夸张。这个价位能加进来，是工厂直供才能做到的成本控制。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">产品名来源</div>
+      <div>
+        <div class="sg-name">水解胶原（COLLAGEN）</div>
+        <div class="sg-desc">很多"胶原面霜"成分表里根本没有胶原——只是名字加了概念。这款成分表里真的有水解胶原（COLLAGEN）。水解成小分子胶原肽才能渗透皮肤，为皮肤细胞合成新胶原提供原料。</div>
+        <div class="sg-talk">直播间：「叫胶原抗皱，成分表里就得有胶原——这款有，COLLAGEN，小分子能进去的那种。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">高端舒缓</div>
+      <div>
+        <div class="sg-name">红没药醇（BISABOLOL）</div>
+        <div class="sg-desc">洋甘菊提取，敏感肌护肤品里公认的顶级抗炎成分。这款舒缓检测报告透明质酸酶抑制率49.64%，红没药醇是核心贡献成分，成分和数据高度对应——讲数据的时候顺带讲这个成分，逻辑最完整。</div>
+        <div class="sg-talk">直播间：「有红没药醇——敏感肌舒缓的高端成分，舒缓报告49.64%抑制率，这个成分是主力。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">系列连接</div>
+      <div>
+        <div class="sg-name">松茸 + 灵芝 + 山竹果皮</div>
+        <div class="sg-desc">和松茸悬油精华共用三个成分。黎沫"抗老线"的设计逻辑：精华液集中攻效，精华霜封层留驻，两款用同一套抗老成分叠加协同。向已购松茸悬油精华的客户推精华霜，这是最自然的连带理由。</div>
+        <div class="sg-talk">直播间：「有松茸悬油精华的姐妹——这款霜也有松茸和山竹果皮，精华攻效 + 霜封层，配套设计，叠加用抗老效果翻倍。」</div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<div class="sec" id="system">
+  <div class="sec-eye">Part 04 · 黎沫产品体系</div>
+  <p class="sec-title">精华霜在哪里<br>整套怎么用</p>
+  <p class="sec-desc">精华霜是护肤最后一步，前面所有步骤的成分靠它锁住。</p>
+  <div class="sys-card">
+    <div class="sys-header">
+      <div class="sys-h">产品</div><div class="sys-h">功能分工</div><div class="sys-h">步骤</div>
+    </div>
+    <div class="sys-rows">
+      <div class="sys-row"><div class="sys-lbl">精粹水</div><div class="sys-role">打开皮肤通道 · 补水导入</div><div class="sys-tag">第1步</div></div>
+      <div class="sys-row"><div class="sys-lbl">松茸精华液</div><div class="sys-role">抗老抗皱 · 集中攻效</div><div class="sys-tag">第2步</div></div>
+      <div class="sys-row"><div class="sys-lbl">胶原精华霜</div><div class="sys-role">封层锁水 · 胶原修护 · 抗老收口</div><div class="sys-tag active">第3步 · 此款</div></div>
+      <div class="sys-row" style="opacity:.6"><div class="sys-lbl">牡丹面膜</div><div class="sys-role">集中补给 · 每周2-3次</div><div class="sys-tag">可选</div></div>
+      <div class="sys-row" style="opacity:.6"><div class="sys-lbl">精华乳</div><div class="sys-role">日常轻薄锁水（和霜二选一）</div><div class="sys-tag">可选</div></div>
+    </div>
+  </div>
+  <div class="grasp" style="margin-bottom:20px">
+    <div class="grasp-lbl">精华霜 vs 精华乳：怎么选</div>
+    <p>精华乳更轻薄，正常肤质日常用；精华霜更滋润，干皮/成熟肌全年首选，所有肤质秋冬首选。已有精华乳的客户，干燥季节可以替换成精华霜，或者叠用——精华乳之后再抹一薄层精华霜，封层效果更强。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<div class="sec" id="scenes">
+  <div class="sec-eye">Part 05 · 销售场景</div>
+  <p class="sec-title">什么人<br>最需要这款</p>
+  <div class="scene-cards">
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🕯</div>
+        <div><div class="sct">抗老抗皱 · 皮肤开始松弛</div><div class="scs">弹幕：「想抗老」「细纹松弛」「需要面霜」「28岁以上」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="drows">
+          <div class="dr"><div class="dl">抗皱检测</div><div class="dn">DPPH 52.48% · p&lt;0.01</div></div>
+          <div class="dr"><div class="dl">成分核心</div><div class="dn">水解胶原 + 藏红花</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「抗老面霜说效果的太多，有检测报告的不多。这款第三方DPPH自由基清除实验，清除率52.48%，p<0.01统计学显著——抗皱不是靠嘴说。水解胶原补充胶原肽原料，藏红花强效抗氧化，松茸灵芝协同——有数据的抗老面霜。」</div>
+          <div class="sst">话术：「面霜选抗老的，先问有没有检测报告——这款有，两份。」</div>
+        </div>
+      </div>
+    </div>
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌿</div>
+        <div><div class="sct">敏感肌 · 皮肤容易泛红</div><div class="scs">弹幕：「敏感肌」「用什么都刺激」「皮肤泛红」「需要舒缓」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="drows">
+          <div class="dr"><div class="dl">舒缓检测</div><div class="dn">透明质酸酶抑制 49.64%</div></div>
+          <div class="dr"><div class="dl">舒缓成分</div><div class="dn">红没药醇 + 尿囊素</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「敏感肌找面霜，最重要两件事：成分温和，有没有真正的舒缓成分。这款有红没药醇，金银花和苦参协同抗炎，防腐用1,2-己二醇温和体系。透明质酸酶抑制实验49.64%（p<0.01），舒缓功效有第三方数据，不是靠成分表说了算。」</div>
+          <div class="sst">话术：「舒缓有没有效，看检测报告——49.64%抑制率，数字在那里」</div>
+        </div>
+      </div>
+    </div>
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌺</div>
+        <div><div class="sct">成分党 · 关注稀缺高端成分</div><div class="scs">弹幕：「看成分」「有什么特别成分」「凭什么贵」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="drows">
+          <div class="dr"><div class="dl">最稀缺</div><div class="dn">藏红花提取物</div></div>
+          <div class="dr"><div class="dl">草本阵容</div><div class="dn">8种中草药</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「成分党来看——这款有藏红花。历史上比黄金还贵，几万朵花手工采1克。加上水解胶原、红没药醇、松茸、灵芝、当归、金银花、山竹果皮——8种中草药配合两份检测报告，成分表经得起审。」</div>
+          <div class="sst">话术：「成分里有藏红花，这个成本在那里——工厂直供才能做到这个价位」</div>
+        </div>
+      </div>
+    </div>
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🛍</div>
+        <div><div class="sct">已买松茸悬油精华 · 连带购买</div><div class="scs">弹幕：「我有松茸精华」「有了精华还需要霜吗」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="drows">
+          <div class="dr"><div class="dl">共用成分</div><div class="dn">松茸 · 灵芝 · 山竹果皮</div></div>
+          <div class="dr"><div class="dl">分工</div><div class="dn">精华攻效 · 霜封层</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「有松茸精华了，还需要霜吗——需要。精华攻效，渗透进去了；霜封层，把渗透进去的成分锁住。这款霜里也有松茸和山竹果皮，不是随便组合，是配套设计的。精华之后上这款霜，抗老成分留驻时间翻倍。」</div>
+          <div class="sst">话术：「精华管进去，霜管留住——少了哪一步都是浪费」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="scripts">
+  <div class="sec-eye">Part 06 · 直播话术</div>
+  <p class="sec-title">四个角度<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px">找到痛点 → 说原因 → 说这款怎么解决</p>
+  <div class="script-cards">
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">01</div><div><div class="scrht">开场：两份报告，比一份更有底气</div><div class="scrhs">黎沫系列最强开场</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        今天这款面霜，我想先说两件事再讲成分。<br><br>
+        这款做了两份第三方检测报告，同一家机构中检科（北京），同一批样品：一份舒缓功效，透明质酸酶抑制率49.64%；一份紧致抗皱，DPPH自由基清除率52.48%——两项均p&lt;0.01，统计学显著。<br><br>
+        大多数护肤品只做一份报告，有的一份都没有。这款两份都有，而且是真实数据，不是备案用的文献引用。<br><br>
+        <strong>舒缓有效果，抗皱有效果，两份报告同时证明——数字在那里，大家可以自己去查。</strong>
+      </div></div>
+    </div>
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">02</div><div><div class="scrht">藏红花为什么值得单独讲</div><div class="scrhs">稀缺性话题 · 最强溢价故事</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        护肤品成分表里出现"番红花花提取物"——这是藏红花，世界上最昂贵的香料之一。<br><br>
+        为什么贵？每朵番红花只有3根细长柱头，需要手工采摘，几万朵花才能得到1克，稀缺不是人工制造的，是自然决定的。<br><br>
+        护肤功效：藏红花素有极强的抗氧化能力，同时辅助提亮和均匀肤色，是高端抗老产品里越来越常见的成分。<br><br>
+        <strong>这款工厂直供，没有中间商，这才能在这个价位加进去——消费者在大牌里要付出三倍价格才能用到同等配置。</strong>
+      </div></div>
+    </div>
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">03</div><div><div class="scrht">胶原面霜和普通面霜的区别</div><div class="scrhs">产品认知 · 名字有没有货</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        市面上很多"胶原面霜"，成分表里根本找不到胶原——只是名字里有个"胶原"。<br><br>
+        这款不一样，成分表里有水解胶原（COLLAGEN）。水解是关键——大分子胶原蛋白渗透不进皮肤，水解成小分子胶原肽才能真正进去，为皮肤细胞合成新胶原提供原料。<br><br>
+        <strong>"胶原抗皱"这四个字，成分表里有真实的胶原。买之前先翻成分表找有没有COLLAGEN——有才叫胶原面霜，没有就是概念。</strong>
+      </div></div>
+    </div>
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">04</div><div><div class="scrht">和松茸精华液搭配用</div><div class="scrhs">连带销售 · 体系化逻辑</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        松茸悬油精华和这款胶原精华霜，是黎沫抗老线的攻守搭档。<br><br>
+        松茸精华液：脂溶性活性成分为主，渗透皮肤深层，集中发挥抗氧化和细胞更新作用。胶原精华霜：精华液之后使用，油脂封层把精华液的成分锁在皮肤里，同时补充水解胶原、藏红花、当归修护和提亮成分。<br><br>
+        两款共用松茸、灵芝、山竹果皮——<strong>配套设计，精华液进，精华霜留，两步加在一起才是完整的抗老护肤方案。</strong>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-eye">Part 07 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>黎沫的胶原精华霜和松茸悬油精华，构成了品牌抗老线的核心——一攻一守，配套设计。</p>
+    <p>做两份检测报告、加藏红花、放水解胶原——<strong>每一个决定背后都有成本。</strong>品牌把这些成本放在配方和检测上，而不是包装和营销上。</p>
+    <p>生产企业天津尚美化妆品有限公司，中草药成分背后有专门的研发体系，藏红花、当归、金银花、苦参这些成分从原料端就有把控标准。</p>
+    <p class="gold">做黎沫只有一个标准：自己家人敢用、消费者买得起的配方。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<div class="sec" id="push">
+  <div class="sec-eye">Part 08 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px">根据弹幕情况选场景，接通用话术收单。</p>
+  <div class="psc"><div class="pscl">🕯 抗老抗皱需求的姐妹</div><p>DPPH清除率52.48% + 舒缓抑制率49.64%，两份报告同时证明——<strong>黎沫系列功效数据最全面的一款，今天直播间最低价。</strong></p></div>
+  <div class="psc"><div class="pscl">🌿 敏感肌需要面霜的姐妹</div><p>红没药醇顶级舒缓 + 透明质酸酶抑制率49.64% + 温和防腐体系。<strong>舒缓有效，数字说话。</strong></p></div>
+  <div class="psc"><div class="pscl">🌺 关注成分/稀缺原料的姐妹</div><p>藏红花（历史比黄金贵）+ 水解胶原 + 松茸灵芝 + 当归山竹，8种中草药，工厂直供做到。<strong>同等配置大牌三倍价格起。</strong></p></div>
+  <div class="psc"><div class="pscl">🛍 已有松茸悬油精华的姐妹</div><p>共用松茸、灵芝、山竹果皮，精华攻效 + 霜封层，配套设计。<strong>精华进去了，霜不用等于前功尽弃。</strong></p></div>
+  <div class="hbc" style="margin-top:18px">
+    <div class="hbcl">价值锚定</div>
+    <p>两份第三方检测报告 + 藏红花 + 水解胶原 + 红没药醇 + 8种中草药，任何一项单独拿出来都是溢价配置。<strong>今天直播间最低价，工厂直供。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">临门收单</div>
+    <p>抗老的、敏感舒缓的、追成分的——这款都能给数据支撑的答案。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<div class="sec" id="faq">
+  <div class="sec-eye">Part 09 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>精华霜和精华乳哪个更适合我？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">精华乳更轻薄，正常肤质日常、干皮春秋首选；精华霜更滋润，干皮/成熟肌全年、所有肤质秋冬首选。已有精华乳的客户，干燥季节可以替换成精华霜，或者精华乳之后薄涂一层精华霜加强封层。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>敏感肌可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">可以，而且做了舒缓检测。红没药醇是敏感肌护肤品里公认的顶级舒缓成分，透明质酸酶抑制率49.64%（p&lt;0.01）。防腐用1,2-己二醇温和体系。急性过敏期先就医；稳定期敏感肌合适。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>水解胶原涂在脸上有用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">水解胶原（胶原肽）外用有效——水解后的小分子肽可以渗透角质层，为皮肤成纤维细胞合成新胶原提供原料，同时有保湿和锁水功效。口服胶原蛋白和外用胶原肽是两条不同路径，互补不是非此即彼。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>两份检测报告可信吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">两份都是中检科（北京）化妆品技术有限公司出具，是国内权威化妆品功效检测机构。舒缓用透明质酸酶抑制实验，紧致抗皱用DPPH自由基清除实验，都是化妆品行业通用体外功效评价方法，报告编号可查可验。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和松茸悬油精华一起用，顺序是什么？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">顺序：精粹水 → 松茸悬油精华（摇匀） → 胶原精华霜。精华液先渗透，精华霜后封层，30秒内叠用效果最好。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>用在哪个步骤？早晚都用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">精华之后、防晒之前（早上），精华之后最后一步（晚上）。早晚都可以，晚上效果最好——夜间皮肤修复最活跃，胶原修护和抗氧化成分夜间工作效率最高。早上用完记得叠防晒。</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-eye">Part 10 · 使用示范</div>
+  <p class="sec-title">标准用法<br>直播里边涂边讲</p>
+  <div class="ulist">
+    <div class="ustep"><div class="ucirc">①</div><div class="ut"><strong>精华之后使用</strong>——精华液渗透后，精华霜封层，最佳时机是精华液后30秒内</div></div>
+    <div class="ustep"><div class="ucirc">②</div><div class="ut"><strong>取黄豆大小</strong>——霜类浓度高，薄涂均匀就够</div></div>
+    <div class="ustep"><div class="ucirc">③</div><div class="ut"><strong>手心温热后点涂全脸</strong>——手心搓几秒让霜体软化，更好推开</div></div>
+    <div class="ustep"><div class="ucirc">④</div><div class="ut"><strong>由内向外轻推吸收</strong>——不要搓，轻推到皮肤"收进去"为止</div></div>
+    <div class="ustep"><div class="ucirc">⑤</div><div class="ut"><strong>眼周和嘴角多照顾</strong>——细纹最先出现的地方，可以重点涂抹</div></div>
+  </div>
+</div>
+
+<div class="sec" style="padding:36px var(--pad) 0">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="mem-card">
+    <div class="mem-head">进直播间前最后看一遍</div>
+    <div class="mem-item">
+      <div class="mn">1</div>
+      <div><div class="mt">先说双报告</div><div class="md">舒缓49.64% + 抗皱52.48%，两份中检科报告——黎沫系列唯一同时有两份检测报告的产品，这是最强开场</div></div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">2</div>
+      <div><div class="mt">两个必讲成分</div><div class="md">藏红花（历史比黄金贵，话题性最强）· 水解胶原（产品名的来源，成分表里真的有COLLAGEN）</div></div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">3</div>
+      <div><div class="mt">一个连带机会</div><div class="md">已有松茸悬油精华的客户——两款共用松茸、灵芝、山竹果皮，精华攻效 + 霜封层，说清楚逻辑连带率极高</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">LYMO 黎沫</div>
+  <div class="fn2">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=p+'%';
+});
+function toggleScene(h){
+  const b=h.nextElementSibling,t=h.querySelector('.stog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.stog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleScript(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scrb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleFaq(q){
+  const a=q.nextElementSibling,i=q.querySelector('.faq-i'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');i.classList.add('open');}
+}
+</script>
+</body>
+</html>

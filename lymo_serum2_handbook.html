@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黎沫松茸赋活悬油精华液 · 主播手册</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f0e;--bg2:#1a1917;--bg3:#242220;
+  --gold:#c9a84c;--gold-l:#e8c96a;
+  --text:#e8e4dc;--mid:#aeaaa2;--dim:#72706c;--white:#f5f2ec;
+  --div:rgba(201,168,76,0.16);--pad:18px;
+}
+body{background:var(--bg);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;color:var(--text);font-size:15px;line-height:1.75;padding-bottom:60px}
+nav{position:sticky;top:0;z-index:99;background:var(--bg);border-bottom:1px solid var(--div);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:48px}
+.nav-brand{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.nav-links{display:flex;list-style:none;padding:0;margin:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:11px;color:var(--dim);text-decoration:none;padding:6px 10px;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+#prog{position:fixed;top:48px;left:0;height:2px;background:var(--gold);width:0;z-index:98}
+
+.hero{padding:44px var(--pad) 36px;border-bottom:1px solid var(--div)}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:26px;font-weight:700;color:var(--white);line-height:1.25;margin:0 0 6px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+.gold-rule{width:32px;height:2px;background:var(--gold);margin-bottom:20px}
+.hero-intro{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:22px}
+.hero-intro strong{color:var(--white)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.rc{background:var(--bg2);border:1px solid var(--div);border-radius:10px;padding:13px;display:flex;align-items:center;gap:10px}
+.ri{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rt{font-size:13px;color:var(--white);font-weight:500}
+.rs{font-size:10px;color:var(--dim)}
+
+.sec{padding:36px var(--pad) 0;border-top:1px solid var(--div)}
+.sec-eye{font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:22px;font-weight:700;color:var(--white);line-height:1.3;margin:0 0 18px}
+.sec-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:26px}
+.sec-end{height:36px}
+
+/* 检测数据卡 */
+.data-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:14px;padding:22px 18px;margin-bottom:20px}
+.data-eye{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.data-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px}
+.data-src{font-size:11px;color:var(--dim);margin-bottom:18px}
+.data-bars{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.db-row{display:flex;align-items:center;gap:10px}
+.db-lbl{font-size:12px;color:var(--mid);width:52px;flex-shrink:0;text-align:right}
+.db-bar-wrap{flex:1;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.db-bar-fill{height:100%;border-radius:4px;background:var(--gold)}
+.db-val{font-size:14px;font-weight:700;color:var(--gold-l);min-width:40px}
+.db-sig{font-size:10px;color:#7ec99a;margin-left:2px}
+.data-note{font-size:11px;color:var(--dim);line-height:1.65;padding:10px 12px;background:var(--bg2);border-radius:8px}
+.data-note strong{color:var(--mid)}
+
+/* 悬油演示提示 */
+.shake-card{background:var(--bg2);border:1px solid var(--bg3);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+.shake-icon{font-size:28px;flex-shrink:0}
+.shake-title{font-size:14px;color:var(--white);font-weight:600;margin-bottom:5px}
+.shake-desc{font-size:13px;color:var(--mid);line-height:1.7}
+.shake-tip{font-size:12px;color:var(--gold);margin-top:6px;border-left:2px solid var(--gold);padding-left:8px}
+
+.step-wrap{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+.step:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:0;width:1px;background:var(--div)}
+.snum{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold)}
+.sr{flex:1;padding-top:4px}
+.stitle{font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px}
+.grasp{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:14px}
+.grasp-lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.grasp p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.ilist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ii{background:var(--bg3);border-radius:7px;padding:11px 13px}
+.in{font-size:13px;color:var(--gold-l);font-weight:500;margin-bottom:3px}
+.id{font-size:12px;color:var(--dim);line-height:1.6}
+.solves{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.st{font-size:11px;background:rgba(74,140,92,.1);border:1px solid rgba(74,140,92,.3);color:#7ec99a;padding:3px 10px;border-radius:20px}
+.ftag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:5px 9px;margin-top:8px}
+.fl{font-size:11px;color:var(--gold)}
+.fn{font-size:10px;color:var(--dim)}
+.sum-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:10px;padding:18px 16px;margin:8px 0 36px}
+.sum-card .sl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.sum-card .sm{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.sum-card .ss{font-size:12px;color:var(--dim)}
+
+.star-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.sg{background:var(--bg3);border-radius:10px;padding:13px;display:flex;gap:12px}
+.sg-tag{font-size:10px;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:2px 7px;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:2px}
+.sg-name{font-size:13px;color:var(--gold-l);font-weight:600;margin-bottom:3px}
+.sg-desc{font-size:12px;color:var(--mid);line-height:1.6}
+.sg-talk{font-size:11px;color:var(--dim);border-left:2px solid rgba(201,168,76,.3);padding-left:8px;margin-top:6px;line-height:1.6;font-style:italic}
+
+/* 搭配体系 */
+.combo-cards{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.combo{background:var(--bg2);border-radius:10px;padding:14px 16px}
+.combo-title{font-size:13px;color:var(--white);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.combo-steps{display:flex;flex-direction:column;gap:5px}
+.combo-step{font-size:12px;color:var(--mid);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.cs-num{font-size:10px;color:var(--gold);background:rgba(201,168,76,.12);border-radius:3px;padding:1px 6px;flex-shrink:0;margin-top:2px}
+.combo-why{font-size:11px;color:var(--dim);border-left:2px solid var(--gold-l);padding-left:8px;margin-top:8px;line-height:1.6}
+
+.scene-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.scene-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.sch{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;user-select:none}
+.sch:hover{background:var(--bg3)}
+.sem{font-size:22px;flex-shrink:0}
+.sct{font-size:14px;color:var(--white);font-weight:500}
+.scs{font-size:11px;color:var(--dim);margin-top:2px}
+.stog{margin-left:auto;color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.stog.open{transform:rotate(45deg)}
+.scb{display:none;padding:0 16px 18px}
+.scb.open{display:block}
+.drows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.dr{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:7px;padding:10px 13px}
+.dl{font-size:13px;color:var(--mid)}
+.dn{font-size:13px;font-weight:700;color:var(--gold)}
+.dsrc{font-size:10px;color:var(--dim);margin-bottom:12px}
+.sscr{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:13px 14px}
+.ssd{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px}
+.sst{font-size:12px;color:var(--dim);border-left:2px solid var(--gold);padding-left:9px;line-height:1.6}
+
+.script-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.script-card{background:var(--bg2);border-radius:12px;overflow:hidden;border:1px solid var(--bg3)}
+.scrh{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;cursor:pointer;user-select:none}
+.scrh:hover{background:var(--bg3)}
+.scrhl{display:flex;align-items:center;gap:11px}
+.scrn{font-size:22px;color:var(--gold);opacity:.3;font-weight:700;min-width:28px;line-height:1}
+.scrht{font-size:14px;color:var(--white);font-weight:500}
+.scrhs{font-size:11px;color:var(--dim);margin-top:2px}
+.tog{width:20px;height:20px;border-radius:50%;border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;transition:transform .3s;flex-shrink:0}
+.tog.open{transform:rotate(45deg)}
+.scrb{display:none;padding:0 16px 16px}
+.scrb.open{display:block}
+.scrbox{background:var(--bg3);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px;font-size:14px;color:var(--mid);line-height:2}
+.scrbox strong{color:var(--white)}
+
+.psc{background:var(--bg2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin-bottom:10px}
+.pscl{font-size:13px;color:var(--white);font-weight:500;margin-bottom:6px}
+.psc p{font-size:13px;color:var(--mid);line-height:1.8;margin:0}
+.psc strong{color:var(--white)}
+.hbc{background:var(--bg2);border-radius:10px;padding:18px;margin-bottom:12px}
+.hbcl{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.hbc p{font-size:14px;color:var(--mid);line-height:1.9;margin:0}
+.hbc strong{color:var(--white)}
+
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.faq-item{background:var(--bg2);border-radius:10px;overflow:hidden}
+.faq-q{padding:14px 15px;font-size:14px;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q:hover{background:var(--bg3)}
+.faq-i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform .3s}
+.faq-i.open{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 15px 13px;font-size:13px;color:var(--mid);line-height:1.8;border-top:1px solid var(--bg3)}
+.faq-a.open{display:block;padding-top:11px}
+
+.ulist{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.ustep{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border-radius:9px;padding:13px}
+.ucirc{width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.ut{font-size:13px;color:var(--mid);line-height:1.7}
+.ut strong{color:var(--white)}
+
+.mem-card{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:24px 18px;margin-bottom:36px}
+.mem-head{font-size:12px;letter-spacing:.1em;color:var(--gold);text-align:center;margin-bottom:20px}
+.mem-item{display:flex;gap:13px;margin-bottom:16px}
+.mem-item:last-child{margin-bottom:0}
+.mn{font-size:20px;font-weight:700;color:var(--gold);line-height:1;min-width:24px}
+.mt{font-size:13px;color:var(--white);font-weight:500;margin-bottom:3px}
+.md{font-size:12px;color:var(--dim);line-height:1.6}
+
+.story{background:var(--bg2);border:1px solid var(--div);border-radius:12px;padding:22px 18px;margin-bottom:36px;position:relative;overflow:hidden}
+.story::before{content:"\201C";position:absolute;top:-14px;left:12px;font-size:90px;color:var(--gold);opacity:.05;line-height:1;pointer-events:none}
+.story p{font-size:14px;color:var(--mid);line-height:2;margin:0 0 10px;position:relative}
+.story p:last-child{margin:0}
+.story strong{color:var(--white)}
+.story .gold{color:var(--gold);font-weight:500}
+
+footer{padding:28px var(--pad);text-align:center;border-top:1px solid var(--div)}
+.fb{font-size:14px;color:var(--gold);letter-spacing:.18em;margin-bottom:5px}
+.fn2{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<nav>
+  <div class="nav-brand">LYMO 黎沫 · 主播手册</div>
+  <ul class="nav-links">
+    <li><a href="#data">检测数据</a></li>
+    <li><a href="#logic">配方</a></li>
+    <li><a href="#star">明星成分</a></li>
+    <li><a href="#combo">搭配</a></li>
+    <li><a href="#scenes">场景</a></li>
+    <li><a href="#scripts">话术</a></li>
+    <li><a href="#push">逼单</a></li>
+    <li><a href="#faq">Q&amp;A</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">主播培训手册 · 内部使用</div>
+  <h1>黎沫<em>松茸赋活</em><br>悬油精华液</h1>
+  <div class="hero-sub">黎沫目前唯一有第三方检测报告的产品</div>
+  <div class="gold-rule"></div>
+  <p class="hero-intro">
+    这款精华液有两个其他产品没有的东西：<br>
+    <strong>一个是松茸——护肤界最稀缺的菌类成分之一。</strong><br>
+    <strong>一个是第三方检测报告——紧致抗皱功效有数据，不是靠嘴说。</strong><br>
+    悬油剂型摇起来就是话题，开口就有内容讲。
+  </p>
+  <div class="result-grid">
+    <div class="rc"><div class="ri">🍄</div><div><div class="rt">松茸菌类精华</div><div class="rs">稀缺成分 · 话题性最强</div></div></div>
+    <div class="rc"><div class="ri">📋</div><div><div class="rt">检测报告背书</div><div class="rs">DPPH 57.86% · p&lt;0.01</div></div></div>
+    <div class="rc"><div class="ri">🌑</div><div><div class="rt">悬油黑金剂型</div><div class="rs">摇瓶即话题 · 视觉冲击</div></div></div>
+    <div class="rc"><div class="ri">🌿</div><div><div class="rt">中草药抗老矩阵</div><div class="rs">灵芝·黄连·倒捻子</div></div></div>
+  </div>
+  <p style="font-size:12px;color:var(--dim)">↓ 先看检测数据，这是讲这款最有底气的地方</p>
+</div>
+
+<!-- 检测数据 ── 放在最前 -->
+<div class="sec" id="data">
+  <div class="sec-eye">Part 01 · 第三方检测报告</div>
+  <p class="sec-title">有数据<br>才有底气讲</p>
+  <p class="sec-desc">黎沫系列目前唯一拥有第三方体外功效检测报告的产品。紧致抗皱不是靠成分推演，是有实验数据支撑的。</p>
+
+  <div class="data-card">
+    <div class="data-eye">中检科（北京）化妆品技术有限公司 · 2025.03.21</div>
+    <div class="data-title">体外紧致、抗皱功效试验（DPPH自由基清除实验）</div>
+    <div class="data-src">报告编号：268GF01572025100348-JC · 委托单位：天津尚美化妆品有限公司</div>
+    <div class="data-bars">
+      <div class="db-row">
+        <div class="db-lbl">阳性对照</div>
+        <div class="db-bar-wrap"><div class="db-bar-fill" style="width:100%;background:#aeaaa2"></div></div>
+        <div class="db-val" style="color:var(--mid)">69.80%</div>
+      </div>
+      <div class="db-row">
+        <div class="db-lbl">样品100%</div>
+        <div class="db-bar-wrap"><div class="db-bar-fill" style="width:83%"></div></div>
+        <div class="db-val">57.86%<span class="db-sig">**</span></div>
+      </div>
+      <div class="db-row">
+        <div class="db-lbl">样品50%</div>
+        <div class="db-bar-wrap"><div class="db-bar-fill" style="width:40%"></div></div>
+        <div class="db-val">27.68%<span class="db-sig">**</span></div>
+      </div>
+      <div class="db-row">
+        <div class="db-lbl">样品25%</div>
+        <div class="db-bar-wrap"><div class="db-bar-fill" style="width:22%"></div></div>
+        <div class="db-val">15.48%<span class="db-sig">**</span></div>
+      </div>
+    </div>
+    <div class="data-note">
+      ** 与阴性对照相比具有统计学差异（p&lt;0.01）<br><br>
+      <strong>结论：</strong>样品在100%、50%、25%浓度下均能有效清除DPPH自由基，表明样品具有紧致、抗皱功效。<br><br>
+      <strong>原理：</strong>自由基过量会氧化降低皮肤胶原蛋白和弹性纤维，导致松弛和皱纹。清除自由基就是从根源阻断这个老化进程。
+    </div>
+  </div>
+
+  <div class="shake-card">
+    <div class="shake-icon">⚠️</div>
+    <div>
+      <div class="shake-title">这份报告在直播间怎么用</div>
+      <div class="shake-desc">不要只说"有检测报告"——说具体数据。"100%浓度DPPH自由基清除率57.86%，第三方中检科检测，p值0.01，统计学有效"——这句话成分党粉丝听懂了会直接下单，不懂的粉丝听到数字也会感受到专业性。</div>
+      <div class="shake-tip">话术：「这不是我说有效——是第三方实验室测出来的，报告在那里，数字不会骗人。」</div>
+    </div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 配方逻辑 -->
+<div class="sec" id="logic">
+  <div class="sec-eye">Part 02 · 配方逻辑</div>
+  <p class="sec-title">悬油精华<br>为什么是这个配方</p>
+  <p class="sec-desc">悬油剂型的底层逻辑：油相和水相不完全融合，使用前摇匀，每一次都是新鲜乳化。活性成分在油相里更稳定，渗透进皮肤效率更高。</p>
+
+  <div class="shake-card" style="margin-bottom:26px">
+    <div class="shake-icon">🌑</div>
+    <div>
+      <div class="shake-title">直播间必做动作：摇瓶示范</div>
+      <div class="shake-desc">悬油精华使用前摇匀，棕色液体里有悬浮颗粒感——这个动作本身就是内容。摇匀这个步骤告诉消费者：这不是普通精华，油和水没有强制乳化在一起，活性成分更纯粹更稳定。</div>
+      <div class="shake-tip">话术：「用之前摇一摇——这是悬油精华的仪式感，也是确保每次用到最活跃状态的方式。」</div>
+    </div>
+  </div>
+
+  <div class="step-wrap">
+
+    <div class="step">
+      <div class="snum">一</div>
+      <div class="sr">
+        <div class="stitle">双发酵底层 + 角鲨烷油相基底</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>和黎沫系列其他产品一样，发酵液打底。这款额外加了角鲨烷作为油相基底——和精华乳里的角鲨烷逻辑一样，仿皮脂结构渗透快，承载后续所有活性成分进入皮肤。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">乳酸杆菌发酵产物 ← 第一位</div><div class="id">黎沫系列贯穿成分，发酵液打底渗透效率高于普通水</div></div>
+          <div class="ii"><div class="in">酵母菌/大米发酵产物滤液</div><div class="id">大米发酵，提亮底层，和牡丹面膜同源</div></div>
+          <div class="ii"><div class="in">角鲨烷</div><div class="id">油相核心，仿皮脂结构，承载脂溶性活性成分快速渗透</div></div>
+          <div class="ii"><div class="in">甘油葡糖苷 + 水解葡萄</div><div class="id">水相保湿，葡萄多酚抗氧化辅助，让悬油精华水相部分也有功效</div></div>
+        </div>
+        <div class="ftag"><span style="font-size:12px">🧬</span><div><div class="fl">双发酵 + 角鲨烷油相 · 黎沫系列最高配置</div><div class="fn">与系列精粹水、精华乳同源发酵体系</div></div></div>
+        <div class="solves"><span class="st">✓ 渗透效率高</span><span class="st">✓ 活性成分稳定</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">二</div>
+      <div class="sr">
+        <div class="stitle">松茸 + 灵芝 · 双菌类抗老核心</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>这款最大的差异化不是检测报告，是松茸。松茸是护肤界用量极少、原料极贵的稀缺成分。灵芝已经是黎沫系列的中草药锚点，松茸是这款独有的——两个菌类成分放在一款精华里，在国内市场非常罕见。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">松口蘑（TRICHOLOMA MATSUTAKE）提取物</div><div class="id">松茸多糖和松茸醇，抗氧化 + 促进皮肤细胞更新 + 辅助修护。松茸在食材领域是顶级食材，在护肤品里同样稀缺，原料成本极高，是这款配方最有说话权的溢价成分</div></div>
+          <div class="ii"><div class="in">赤芝（GANODERMA LUCIDUM）提取物</div><div class="id">灵芝三萜抗氧化抗炎，和黎沫精粹水系列一脉相承，在松茸旁边进一步强化"双菌类"的品牌记忆</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 松茸稀缺话题</span><span class="st">✓ 双菌类协同抗老</span><span class="st">✓ 溢价感最强</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="snum">三</div>
+      <div class="sr">
+        <div class="stitle">中草药抗老矩阵 + 维E双重抗氧化</div>
+        <div class="grasp"><div class="grasp-lbl">主播这样理解</div><p>这款的检测结论是"紧致抗皱"——这个功效的配方支撑就在这里。倒捻子（山竹）果皮是超强抗氧化成分，黄连黄柏是黎沫系列的中草药抗炎线，维E双重（生育酚 + 生育酚乙酸酯）在配方里保护所有活性成分不氧化失活。</p></div>
+        <div class="ilist">
+          <div class="ii"><div class="in">倒捻子（GARCINIA MANGOSTANA）果皮提取物</div><div class="id">山竹果皮，富含α-倒捻子素和多种黄酮类化合物，抗氧化能力极强，被称为"抗氧化之王"。脂溶性强，在悬油剂型里溶解性和稳定性最佳，是这款专门用悬油剂型的原因之一</div></div>
+          <div class="ii"><div class="in">生育酚（维生素E）+ 生育酚乙酸酯</div><div class="id">双维E——游离型生育酚直接抗氧化，乙酸酯型更稳定、渗透后转化为活性VE。双重形式确保抗氧化作用持续覆盖</div></div>
+          <div class="ii"><div class="in">黄连根提取物 + 黄檗树皮提取物</div><div class="id">和黎沫系列精粹水同款中草药，抗菌抗炎，协同维稳皮肤环境</div></div>
+          <div class="ii"><div class="in">泛醇（维生素B5）</div><div class="id">修护促渗透，帮助活性成分进入皮肤更深层，同时辅助锁水</div></div>
+        </div>
+        <div class="solves"><span class="st">✓ 抗氧化有数据</span><span class="st">✓ 紧致抗皱</span><span class="st">✓ 中草药抗炎协同</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sum-card">
+    <div class="sl">一句话记住</div>
+    <div class="sm">松茸赋活 · 悬油精华 · 检测证实紧致抗皱</div>
+    <div class="ss">双菌类成分 + 悬油剂型 + 第三方数据背书，黎沫系列功效最硬的一款</div>
+  </div>
+</div>
+
+<!-- 明星成分 -->
+<div class="sec" id="star">
+  <div class="sec-eye">Part 03 · 明星成分</div>
+  <p class="sec-title">四个成分<br>单独拎出来讲</p>
+
+  <div class="star-grid">
+    <div class="sg">
+      <div class="sg-tag">最稀缺</div>
+      <div>
+        <div class="sg-name">松口蘑（松茸）提取物</div>
+        <div class="sg-desc">松茸是全球公认最难人工培育的珍稀食用菌，只能在特定环境自然生长。作为护肤原料，松茸多糖具备强效抗氧化 + 促进皮肤细胞更新的活性，原料成本远高于普通植物提取物。在护肤品成分表里出现松茸本身就是溢价信号。</div>
+        <div class="sg-talk">直播间：「这款最特别的地方——成分里有松茸。松茸你们知道吗，顶级食材，不是普通蘑菇。护肤品里用松茸提取物，原料成本在那里，这是这款精华贵在哪的原因之一。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">抗氧化之王</div>
+      <div>
+        <div class="sg-name">倒捻子（山竹）果皮提取物</div>
+        <div class="sg-desc">山竹果皮含有α-倒捻子素，多种实验证明其抗氧化能力超过维C和维E。脂溶性强，在悬油精华里稳定性和活性最佳——这也是这款专门做成悬油剂型的重要原因：水溶剂型会降低其稳定性。检测报告里的DPPH清除率，倒捻子是主要贡献成分之一。</div>
+        <div class="sg-talk">直播间：「成分里有山竹果皮提取物——就是吃山竹的那个紫皮。α-倒捻子素抗氧化能力超过维C，而且脂溶性，在悬油配方里最稳定、效果最好。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">双维E</div>
+      <div>
+        <div class="sg-name">生育酚 + 生育酚乙酸酯</div>
+        <div class="sg-desc">同时使用两种形式的维E——游离生育酚直接发挥抗氧化作用，乙酸酯型更稳定不易失活，渗透皮肤后水解转化为活性维E持续工作。双维E体系比单一形式的维E覆盖时间更长，抗氧化效率更高，是这款配方的一个设计细节。</div>
+        <div class="sg-talk">直播间：「这款用了两种维E——一种快速起效，一种慢慢释放持续作用。就像缓释药，不是一次性的，是持续在皮肤里工作的。」</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-tag">配方逻辑</div>
+      <div>
+        <div class="sg-name">悬油剂型本身</div>
+        <div class="sg-desc">悬油精华不是失败的乳化——是刻意的设计。倒捻子素、维E、松茸多糖等脂溶性活性成分在油相里稳定性更高，不与水相强制乳化，活性损失更少。每次使用前摇匀，是在用的那一刻才完成临时乳化，确保成分处于最活跃的状态渗透皮肤。</div>
+        <div class="sg-talk">直播间：「为什么做成悬油而不是普通精华——因为里面的活性成分脂溶性强，放在水里会失活。悬油是让它们最稳定保存、用的时候最活跃的方式。」</div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 搭配组合 -->
+<div class="sec" id="combo">
+  <div class="sec-eye">Part 04 · 搭配组合</div>
+  <p class="sec-title">和黎沫系列<br>怎么搭着卖</p>
+  <p class="sec-desc">这款是黎沫系列功效最硬的产品，定位是"抗老核心步骤"。和其他产品的分工清晰，说清楚就能带动全套。</p>
+
+  <div class="combo-cards">
+    <div class="combo">
+      <div class="combo-title">🌟 基础两步套（最好卖）</div>
+      <div class="combo-steps">
+        <div class="combo-step"><div class="cs-num">第1步</div><div>沁透焕肤精粹水——打开皮肤通道，发酵液导入</div></div>
+        <div class="combo-step"><div class="cs-num">第2步</div><div>松茸赋活悬油精华液——摇匀，油相活性成分渗透更深</div></div>
+      </div>
+      <div class="combo-why">精粹水打开通道之后，悬油精华的脂溶性成分进得更深——这是两款搭配的核心逻辑，不是随便组合。</div>
+    </div>
+
+    <div class="combo">
+      <div class="combo-title">✨ 完整护肤三步套</div>
+      <div class="combo-steps">
+        <div class="combo-step"><div class="cs-num">第1步</div><div>沁透焕肤精粹水——补水导入，烟酰胺提亮</div></div>
+        <div class="combo-step"><div class="cs-num">第2步</div><div>松茸赋活悬油精华液——抗老抗皱核心功效步骤</div></div>
+        <div class="combo-step"><div class="cs-num">第3步</div><div>凝时润肤精华乳——银耳双多糖锁水，修护留驻</div></div>
+      </div>
+      <div class="combo-why">精粹水打开→悬油精华集中攻效→精华乳封锁留驻，三步分工完整，没有重复，每款都不可或缺。</div>
+    </div>
+
+    <div class="combo">
+      <div class="combo-title">💆 深度修护四步套（晚间）</div>
+      <div class="combo-steps">
+        <div class="combo-step"><div class="cs-num">第1步</div><div>沁透焕肤精粹水</div></div>
+        <div class="combo-step"><div class="cs-num">第2步</div><div>松茸赋活悬油精华液</div></div>
+        <div class="combo-step"><div class="cs-num">第3步</div><div>牡丹焕亮面膜（每周2-3次）</div></div>
+        <div class="combo-step"><div class="cs-num">第4步</div><div>凝时润肤精华乳</div></div>
+      </div>
+      <div class="combo-why">敷面膜前先用悬油精华，活性成分先进入，面膜再集中补水焕亮——四步全套，晚间护肤效果叠加最明显。</div>
+    </div>
+  </div>
+
+  <div class="grasp" style="margin-bottom:8px">
+    <div class="grasp-lbl">连带话术</div>
+    <p>「精粹水是地基，松茸精华是核心，精华乳是封顶。少了哪一步，其他两步都会打折。今天三款同时拿，比单买便宜，而且护肤体系才是完整的。」</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 销售场景 -->
+<div class="sec" id="scenes">
+  <div class="sec-eye">Part 05 · 销售场景</div>
+  <p class="sec-title">什么人<br>最需要这款</p>
+
+  <div class="scene-cards">
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🕯</div>
+        <div><div class="sct">抗老 · 细纹 · 皮肤松弛</div><div class="scs">弹幕：「想抗老」「细纹」「法令纹」「皮肤开始松弛」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">主力场景 · 数据最有说服力</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">检测结论</div><div class="dn">紧致抗皱有数据</div></div>
+          <div class="dr"><div class="dl">DPPH清除率</div><div class="dn">57.86% · p&lt;0.01</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「抗老抗皱——这款不只是说说，有第三方检测报告。中检科（北京）实验室测的DPPH自由基清除率57.86%，统计学显著（p<0.01）。自由基是皮肤氧化老化的根本原因，清除自由基就是从源头阻断松弛和细纹的形成。松茸提取物 + 山竹果皮 + 双维E三路抗氧化，检测数据在那里，数字不会骗人。」</div>
+          <div class="sst">话术：「这款的抗皱不是靠成分推演，是第三方实验室测出来的」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🍄</div>
+        <div><div class="sct">成分党 · 追求稀缺高端成分</div><div class="scs">弹幕：「看成分」「有没有麦角硫因」「用什么抗老」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">成分党精准场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">稀缺成分</div><div class="dn">松茸 + 倒捻子</div></div>
+          <div class="dr"><div class="dl">双菌类</div><div class="dn">松茸 + 灵芝</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「成分党来看——这款有两个不常见的东西：松茸提取物和倒捻子果皮。松茸在护肤品里出现频率极低，原料贵；倒捻子（山竹果皮）α-倒捻子素抗氧化能力超过维C，脂溶性在悬油配方里最稳定。加上灵芝三萜、双维E、黄连黄柏——不是堆字，是每个成分都有具体功效路径的配方。」</div>
+          <div class="sst">话术：「成分党看成分表，这款经得起查」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">✦</div>
+        <div><div class="sct">皮肤暗沉 · 氧化发黄 · 气色差</div><div class="scs">弹幕：「皮肤暗沉」「气色差」「脸显老」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">抗氧化场景</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">抗氧化路径</div><div class="dn">三重抗氧化</div></div>
+          <div class="dr"><div class="dl">发酵提亮</div><div class="dn">大米发酵底层</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「皮肤暗沉发黄——很多时候是氧化导致的，不是色素问题。解决氧化导致的暗沉，靠的是抗氧化成分。这款松茸多糖、山竹果皮、双维E三路抗氧化，加上大米发酵产物辅助提亮——不是单一成分单打独斗，是体系在持续清除氧化损伤。用一两周，气色改善比提亮产品更自然。」</div>
+          <div class="sst">话术：「暗沉是氧化问题，不是色素问题——对症下药才有效」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-card">
+      <div class="sch" onclick="toggleScene(this)">
+        <div class="sem">🌑</div>
+        <div><div class="sct">被悬油剂型吸引 · 好奇心驱动</div><div class="scs">弹幕：「这是什么」「为什么是黑色的」「要摇吗」时用</div></div>
+        <div class="stog">+</div>
+      </div>
+      <div class="scb">
+        <div class="dsrc">视觉话题场景 · 悬油天然引流</div>
+        <div class="drows">
+          <div class="dr"><div class="dl">颜色来源</div><div class="dn">炭黑（天然）</div></div>
+          <div class="dr"><div class="dl">摇匀原因</div><div class="dn">油水相分离稳定</div></div>
+        </div>
+        <div class="sscr">
+          <div class="ssd">「这是悬油精华——用之前摇一摇。棕黑色是天然炭黑，不是人工染色。悬油精华的逻辑是油相和水相不完全融合，脂溶性活性成分在油相里最稳定最活跃，摇匀是让每次用都是最新鲜的状态。看起来特别，但特别是有道理的。」</div>
+          <div class="sst">话术：「'为什么要摇'——因为不摇活性成分进不去，摇了才是对皮肤真的好」</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 话术 -->
+<div class="sec" id="scripts">
+  <div class="sec-eye">Part 06 · 直播话术</div>
+  <p class="sec-title">四个角度<br>怎么讲</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:22px">找到痛点 → 说原因 → 说这款怎么解决</p>
+
+  <div class="script-cards">
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">01</div><div><div class="scrht">开场：用检测数据建立信任</div><div class="scrhs">这款唯一有数据的讲法 · 最有底气</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        今天这款我想先讲一件事，再讲成分。<br><br>
+        这款做了第三方体外功效检测——中检科（北京），实验室方法是DPPH自由基清除实验。结果是：100%浓度DPPH自由基清除率57.86%，统计学显著（p&lt;0.01）。<br><br>
+        这意味着什么？DPPH自由基清除率越高，说明抗氧化能力越强，抗氧化越强对应的皮肤效果就是——减缓松弛、减少皱纹的形成速度。<br><br>
+        <strong>黎沫系列里，这是唯一有第三方检测数据的产品。数字在那里，不是我说有效就有效。先看数据，再看成分，再决定要不要买——这才是正确的顺序。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">02</div><div><div class="scrht">松茸凭什么这么贵</div><div class="scrhs">稀缺性话题 · 建立溢价感</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        松茸为什么在食材里是顶级——因为它不能人工养殖，只能在原始森林自然生长，对土壤和气候要求极高，产量极少。<br><br>
+        这种稀缺性在护肤原料里同样存在。松茸提取物的原料成本远高于普通植物提取物，愿意在精华液里加松茸的品牌，已经在成分选择上做了取舍。<br><br>
+        松茸多糖在皮肤科学里的功效是什么？促进皮肤细胞更新、抗氧化、辅助修护。这和灵芝三萜的作用路径不同但互补——灵芝主抗炎抗氧，松茸主细胞更新。<br><br>
+        <strong>两个菌类成分放在同一款精华里，这在国内护肤品市场是真的少见。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">03</div><div><div class="scrht">悬油精华和普通精华有什么区别</div><div class="scrhs">剂型教育 · 摇瓶示范配合讲</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        普通精华是水溶或者完全乳化的状态——活性成分和水相混合在一起，脂溶性成分为了溶于水需要加乳化剂，这个过程会让部分活性成分失活或者降低稳定性。<br><br>
+        悬油精华不一样。油相和水相分开存放，脂溶性活性成分在油相里保持最稳定的状态，用的时候摇匀，是在皮肤接触的那一刻才临时乳化，成分活性最高。<br><br>
+        这款里的倒捻子素、维E、松茸多糖都是脂溶性成分——<strong>悬油剂型不是噱头，是专门为这些成分设计的最优保存和传输方式。</strong>
+      </div></div>
+    </div>
+
+    <div class="script-card">
+      <div class="scrh" onclick="toggleScript(this)">
+        <div class="scrhl"><div class="scrn">04</div><div><div class="scrht">和黎沫其他产品怎么搭</div><div class="scrhs">连带销售 · 体系化</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="scrb"><div class="scrbox">
+        黎沫系列现在有四款——精粹水、松茸悬油精华、精华乳、牡丹面膜。每一款的分工是清晰的：<br><br>
+        精粹水打开皮肤通道，精华液集中攻效，精华乳封锁留驻，面膜集中补给。<br><br>
+        松茸悬油精华在这个体系里是"核心功效步骤"——抗老抗皱的主战场。精粹水用过之后皮肤通道打开，这时候上悬油精华，脂溶性成分渗透深度和效率是最高的。<br><br>
+        <strong>单用有效，搭着用效果叠加。已经有精粹水的姐妹，今天直接把悬油精华一起拿——两步比一步的效果好不止一倍。</strong>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 品牌故事 -->
+<div class="sec">
+  <div class="sec-eye">Part 07 · 品牌故事</div>
+  <p class="sec-title">建立信任<br>讲完产品再讲这段</p>
+  <div class="story">
+    <p>黎沫的产品线里，这款松茸悬油精华是<strong>功效定位最高的一款</strong>。</p>
+    <p>做检测、选松茸、用悬油剂型——每一个决定背后都有成本。品牌选择把这些成本放在成分和配方上，而不是包装和营销上。</p>
+    <p>生产企业天津尚美化妆品有限公司，背后有专门研究中草药提取工艺的研发体系——灵芝、黄连、黄柏这些中草药成分，从原料端就开始把控。</p>
+    <p class="gold">做黎沫只有一个标准：自己家人敢用、消费者买得起的配方。</p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- 逼单 -->
+<div class="sec" id="push">
+  <div class="sec-eye">Part 08 · 逼单话术</div>
+  <p class="sec-title">临门一脚<br>怎么说</p>
+  <p style="font-size:13px;color:var(--dim);margin-bottom:18px">根据弹幕情况选场景，接通用话术收单。</p>
+
+  <div class="psc"><div class="pscl">🕯 抗老抗皱需求的姐妹</div><p>第三方检测DPPH清除率57.86%，p&lt;0.01统计学显著——抗皱有数据，不是靠嘴说。<strong>今天直播间最低价，这款功效在黎沫系列里最硬。</strong></p></div>
+  <div class="psc"><div class="pscl">🍄 关注成分/想用高端成分的姐妹</div><p>松茸 + 山竹果皮 + 双维E + 灵芝，双菌类成分在国内精华里极少见。原料成本在那里，工厂直供没有溢价。<strong>同等配方大牌要贵三倍以上。</strong></p></div>
+  <div class="psc"><div class="pscl">✦ 皮肤暗沉/氧化发黄的姐妹</div><p>三路抗氧化持续清除氧化损伤，加上大米发酵辅助提亮。<strong>暗沉是氧化问题，抗氧化才是正确的解法。</strong></p></div>
+  <div class="psc"><div class="pscl">🛍 已有精粹水/精华乳的姐妹</div><p>精粹水打开通道，悬油精华集中攻效，精华乳封锁留驻——三步缺一步都打折。<strong>今天把悬油精华一起拿，护肤体系才完整。</strong></p></div>
+
+  <div class="hbc" style="margin-top:18px">
+    <div class="hbcl">价值锚定</div>
+    <p>松茸提取物（稀缺原料）+ 山竹果皮α-倒捻子素（抗氧化之王）+ 双菌类双维E + 第三方检测数据，任何一个单独拎出来都是溢价成分。<strong>今天直播间最低价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">工厂直供背书</div>
+    <p>天津尚美化妆品有限公司生产，中草药成分自有研发体系提取，没有中间商。<strong>成分贵在原料，不贵在品牌溢价。</strong></p>
+  </div>
+  <div class="hbc">
+    <div class="hbcl">临门收单</div>
+    <p>想抗老的、关注成分的、皮肤暗沉氧化的——这款都能做到，而且有数据。<strong>今天直播间下单，点击下方购物车。</strong></p>
+  </div>
+  <div class="sec-end"></div>
+</div>
+
+<!-- FAQ -->
+<div class="sec" id="faq">
+  <div class="sec-eye">Part 09 · 常见问题</div>
+  <p class="sec-title">用户问了<br>怎么答</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>为什么是棕黑色的？安全吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">颜色来自成分里的炭黑，天然来源，化妆品级别。炭黑在护肤品里主要用于调色，无毒无害，欧美化妆品中广泛使用。棕黑色让这款有辨识度，同时也反映了成分里松茸提取物和山竹果皮天然深色成分的存在。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>为什么用前要摇匀？忘了摇会怎样？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">悬油精华的油相和水相自然分离，脂溶性活性成分（倒捻子素、维E、松茸多糖等）在油相中稳定存在。不摇匀直接用，可能用到的主要是水相，活性成分的渗透量会减少。摇匀让油水临时乳化，每次用到的成分更均匀更完整。建议每次使用前摇10-15秒。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>DPPH检测是什么，能说明紧致抗皱吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">DPPH自由基清除实验是国际通用的体外抗氧化功效评价方法。自由基过量会氧化降解皮肤胶原蛋白和弹性纤维，导致松弛和皱纹。清除自由基就是阻断这个老化进程。这款在25%到100%浓度下清除率均显著（p&lt;0.01），说明抗氧化功效有效，对应的皮肤效果是辅助紧致抗皱。测试机构是中检科（北京）化妆品技术有限公司，报告编号268GF01572025100348-JC。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>敏感肌可以用吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">整体配方有灵芝、黄连、黄柏的抗炎成分，泛醇修护辅助，防腐用1,2-戊二醇温和体系。正常敏感肌可以用；急性过敏期先就医；初次使用建议先局部测试，确认无异常再全脸使用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>用在哪个步骤？早晚都可以吗？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">精粹水之后使用，精华乳或面霜之前。早晚都可以，晚上效果最好——夜间皮肤修复最活跃，抗氧化成分和松茸活性成分在夜间发挥效果更佳。早上用完注意叠防晒，防晒是白天抗老的第一步。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>和三抗精华有什么区别？哪个更好？</span><span class="faq-i">+</span></div>
+      <div class="faq-a">两款定位不同，不是竞争关系。三抗焕颜精华主打晒后修复、毛孔、提亮，水溶性成分为主，针对日间损伤修复；松茸悬油精华主打抗老抗皱，脂溶性成分为主，针对深层氧化老化。喜欢精简步骤的可以选一款主力使用；预算允许可以双精华叠用，早用三抗，晚用松茸悬油，功效互补不重复。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 使用示范 -->
+<div class="sec">
+  <div class="sec-eye">Part 10 · 使用示范</div>
+  <p class="sec-title">标准用法<br>直播里摇着讲</p>
+  <div class="ulist">
+    <div class="ustep"><div class="ucirc">①</div><div class="ut"><strong>使用前摇匀10-15秒</strong>——这是悬油精华最重要的步骤，让油水临时乳化，成分活性最高</div></div>
+    <div class="ustep"><div class="ucirc">②</div><div class="ut"><strong>精粹水之后使用</strong>——皮肤通道打开，悬油精华渗透效率最高</div></div>
+    <div class="ustep"><div class="ucirc">③</div><div class="ut"><strong>取3-4滴，掌心温热</strong>——手心搓几秒让油脂温热，有助于打开毛孔加速渗透</div></div>
+    <div class="ustep"><div class="ucirc">④</div><div class="ut"><strong>轻拍至全脸吸收</strong>——不要搓揉，轻拍让油水混合物均匀渗入，有轻微油润感是正常的</div></div>
+    <div class="ustep"><div class="ucirc">⑤</div><div class="ut"><strong>30秒内叠精华乳</strong>——皮肤还处于开放状态，精华乳封层锁住所有活性成分</div></div>
+  </div>
+</div>
+
+<!-- 记忆卡 -->
+<div class="sec" style="padding:36px var(--pad) 0">
+  <div class="sec-eye">进直播间前</div>
+  <p class="sec-title">记住这三件事</p>
+  <div class="mem-card">
+    <div class="mem-head">进直播间前最后看一遍</div>
+    <div class="mem-item">
+      <div class="mn">1</div>
+      <div>
+        <div class="mt">先说数据再说成分</div>
+        <div class="md">「100%浓度DPPH清除率57.86%，中检科检测，p&lt;0.01」——这句话开口先说，成分党立刻信任，普通粉丝感受到专业。黎沫唯一有数据的产品，是最大的底气</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">2</div>
+      <div>
+        <div class="mt">两个必讲成分</div>
+        <div class="md">松茸（稀缺食材级原料，价格贵有理由）· 山竹果皮倒捻子素（抗氧化之王，比维C强）——这两个消费者有认知，讲完直接建立溢价感</div>
+      </div>
+    </div>
+    <div class="mem-item">
+      <div class="mn">3</div>
+      <div>
+        <div class="mt">摇瓶是内容</div>
+        <div class="md">悬油精华摇匀这个动作本身就是直播间的视觉钩子——每次示范都摇，摇的时候讲"为什么要摇"，好奇心驱动的粉丝是这款转化率最高的客群</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">LYMO 黎沫</div>
+  <div class="fn2">内部培训资料 · 请勿外传</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  document.getElementById('prog').style.width=p+'%';
+});
+function toggleScene(h){
+  const b=h.nextElementSibling,t=h.querySelector('.stog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.stog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleScript(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),o=b.classList.contains('open');
+  document.querySelectorAll('.scrb').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog').forEach(x=>x.classList.remove('open'));
+  if(!o){b.classList.add('open');t.classList.add('open');}
+}
+function toggleFaq(q){
+  const a=q.nextElementSibling,i=q.querySelector('.faq-i'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');i.classList.add('open');}
+}
+</script>
+</body>
+</html>
